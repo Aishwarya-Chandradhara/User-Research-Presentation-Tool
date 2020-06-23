@@ -120,7 +120,7 @@ class ContactUsForm extends Component {
           border: "none"
         }}
       >
-        <MDBSmoothScroll to='projects'>Submit Message</MDBSmoothScroll>
+        <MDBSmoothScroll to='contactus'>Submit Message</MDBSmoothScroll>
       </button>
                   
                 </form>
