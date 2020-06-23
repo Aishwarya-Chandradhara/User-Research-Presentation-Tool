@@ -1,7 +1,7 @@
 import React from "react";
 import { MDBAnimation } from "mdbreact";
 
-const HomeIllustration = () => {
+const ContactUsIllustration = () => {
   return (
     <div className='col-md-6 col-xs-12 col-sm-12'>
     <MDBAnimation reveal type='bounceInLeft' duration='1s'>
@@ -13,11 +13,11 @@ const HomeIllustration = () => {
           marginTop: "20vh",
           marginLeft: "4vw"
         }}
-        src={require("../Assets/Group 45.png")}
+        src={require("../Assets/Group 47.png")}
       />
       </MDBAnimation>
     </div>
   );
 };
 
-export default HomeIllustration;
+export default ContactUsIllustration;

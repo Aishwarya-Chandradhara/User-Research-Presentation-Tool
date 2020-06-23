@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { MDBTypography, MDBContainer} from "mdbreact";
 import ContactUsForm from "../Components/ContactUsForm";
+import ContactUsIllustration from "../Components/ContactUsIllustration";
 
 class ContactUs extends Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class ContactUs extends Component {
             </MDBTypography>
             <div className='row col-md-12' style={{ margin: "0" }}>
               <ContactUsForm />
+              <ContactUsIllustration />
             </div>
         </MDBContainer>
       </section>

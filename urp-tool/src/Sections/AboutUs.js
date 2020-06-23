@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { MDBContainer } from "mdbreact";
 import Navbar from "../Components/Navbar";
 import AboutUsText from "../Components/AboutUsText"
+import AboutUsIllustration from "../Components/AboutUsIllustration";
 
 export default class AboutUs extends Component {
   render() {
@@ -15,6 +16,7 @@ export default class AboutUs extends Component {
           >
           
           <AboutUsText />
+          <AboutUsIllustration />
           </section>
         </MDBContainer>
       </div>
