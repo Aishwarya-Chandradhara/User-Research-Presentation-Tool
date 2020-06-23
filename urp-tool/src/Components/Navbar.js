@@ -56,7 +56,7 @@ class Navbar extends Component {
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='Home' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='home' style={{ color: "#FFFFFF" }}>
                     Home
                   </MDBSmoothScroll>
                 </MDBNavLink>
@@ -67,7 +67,7 @@ class Navbar extends Component {
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='AboutUs' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='aboutus' style={{ color: "#FFFFFF" }}>
                     About Us
                   </MDBSmoothScroll>
                 </MDBNavLink>
@@ -78,7 +78,7 @@ class Navbar extends Component {
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='Projects' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='projects' style={{ color: "#FFFFFF" }}>
                     Projects
                   </MDBSmoothScroll>
                 </MDBNavLink>
@@ -90,7 +90,7 @@ class Navbar extends Component {
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='ContactUs' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='contactus' style={{ color: "#FFFFFF" }}>
                     Contact Us
                   </MDBSmoothScroll>
                 </MDBNavLink>

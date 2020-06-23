@@ -3,7 +3,7 @@ import Home from "../Sections/Home";
 import AboutUs from "../Sections/AboutUs";
 import Projects from "../Sections/Projects";
 import ContactUs from "../Sections/ContactUs";
-import Footer from "../Sections/Footer";
+import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar"
 class MainPage extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class MainPage extends Component {
         <AboutUs />
         <Projects />
         <ContactUs />
-        {/*<Footer />*/}
+        <Footer />
       </div>
     );
   }
