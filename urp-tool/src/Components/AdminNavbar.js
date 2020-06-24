@@ -78,7 +78,7 @@ class AdminNavbar extends Component {
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='projects' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='projectsadmin' style={{ color: "#FFFFFF" }}>
                     Projects
                   </MDBSmoothScroll>
                 </MDBNavLink>

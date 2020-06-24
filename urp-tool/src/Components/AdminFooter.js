@@ -40,7 +40,7 @@ const AdminFooter = () => {
                             style={{ color: "#FFFFFF" }}
                             className='mb-4 font-weight-bold'
                         >
-                            <MDBSmoothScroll to='projects'>Projects</MDBSmoothScroll>
+                            <MDBSmoothScroll to='projectsadmin'>Projects</MDBSmoothScroll>
                         </h6>
                     </MDBCol>
 
