@@ -23,8 +23,8 @@ class ProjectsPage extends Component {
         </MDBTypography>
       <div>
         <ProjectsPageText />
-        <ProjectsPageIllustration />
-        <ProjectsCard />
+        {/* <ProjectsPageIllustration /> */}
+                <ProjectsCard />
         <Footer />
       </div>
       </section>

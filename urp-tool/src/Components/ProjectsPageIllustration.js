@@ -6,8 +6,8 @@ const ProjectsPageIllustration = () => {
         <img
           alt='Thesis'
           style={{
-            width: "1816px",
-            height: "3352px",
+            width: "100%",
+            height: "400px",
             marginTop: "20vh",
             marginLeft: "4vw"
           }}
