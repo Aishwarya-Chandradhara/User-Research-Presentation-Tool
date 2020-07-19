@@ -61,6 +61,7 @@ class AdminNavbar extends Component {
                   </MDBSmoothScroll>
                 </MDBNavLink>
               </MDBNavItem>
+
               <MDBNavItem>
                 <MDBNavLink
                   style={{ color: "#FFFFFF" }}
@@ -72,17 +73,30 @@ class AdminNavbar extends Component {
                   </MDBSmoothScroll>
                 </MDBNavLink>
               </MDBNavItem>
+
               <MDBNavItem>
                 <MDBNavLink
                   style={{ color: "#FFFFFF" }}
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='projectsadmin' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='projects' style={{ color: "#FFFFFF" }}>
                     Projects
                   </MDBSmoothScroll>
                 </MDBNavLink>
               </MDBNavItem>
+              
+              <MDBNavItem>
+                <MDBNavLink
+                  style={{ color: "#FFFFFF" }}
+                  className='waves-effect waves-light'
+                  to='#!'
+                >
+                  <MDBSmoothScroll to='contactus' style={{ color: "#FFFFFF" }}>
+                    Contact Us
+                  </MDBSmoothScroll>
+                </MDBNavLink>
+              </MDBNavItem>
 
               <MDBNavItem>
                 <MDBNavLink
@@ -90,14 +104,11 @@ class AdminNavbar extends Component {
                   className='waves-effect waves-light'
                   to='#!'
                 >
-                  <MDBSmoothScroll to='home' style={{ color: "#FFFFFF" }}>
+                  <MDBSmoothScroll to='aboutus' style={{ color: "#FFFFFF" }}>
                     Logged in as Admin
                   </MDBSmoothScroll>
                 </MDBNavLink>
               </MDBNavItem>
-
-
-              
             </MDBNavbarNav>
           </MDBCollapse>
         </MDBNavbar>
