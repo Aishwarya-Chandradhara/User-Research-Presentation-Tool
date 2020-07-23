@@ -9,7 +9,16 @@ class ProjectsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: [{ title: "project1", desc: "desc1" }, { title: "project1", desc: "desc1" }]
+      projects: [{ title: "project1", desc: "desc1" },
+       { title: "project2", desc: "desc2"},
+       {title: "project3", desc:"desc3"},
+       {title: "project3", desc:"desc3", },
+       {title: "project4", desc:"desc4"},
+       {title: "project5", desc:"desc5"},
+       {title: "project6", desc:"desc6"},
+       {title: "project7", desc:"desc7"},
+       {title: "project 8", desc:"desc8"}
+      ]
     }}
     render() {
       return (

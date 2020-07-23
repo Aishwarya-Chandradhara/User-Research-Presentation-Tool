@@ -29,7 +29,7 @@ import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, 
         <MDBCardBody>
           <MDBCardTitle>{item.title}</MDBCardTitle>
           <MDBCardText>
-           {item.desc}
+           {item.descf}
           </MDBCardText>
           <MDBBtn color="blue" href="#">User Research
           <MDBIcon icon='angle-right' className='ml-2' /> </MDBBtn>
