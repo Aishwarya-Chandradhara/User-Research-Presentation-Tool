@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon } from 'mdbreact';
 
-const ProjectsCard = () => {
+  export default class ProjectsCard extends Component{
+    constructor(props) {
+      super(props);
+      this.state = {
+
+      }}
+   render()
+  { 
+
   return (
+  
     <MDBCol>
+    {this.props.projects && this.props.projects.map((item)=> {
+      {console.log("item", item)}
+      return(
       <MDBCard style={{ width: "22rem" }}>
       <MDBCardImage
             top
@@ -15,17 +27,19 @@ const ProjectsCard = () => {
             alt='MDBCard image cap'
           />
         <MDBCardBody>
-          <MDBCardTitle>Project Description</MDBCardTitle>
+          <MDBCardTitle>{item.title}</MDBCardTitle>
           <MDBCardText>
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam 
-          nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat. 
+           {item.desc}
           </MDBCardText>
           <MDBBtn color="blue" href="#">User Research
           <MDBIcon icon='angle-right' className='ml-2' /> </MDBBtn>
         </MDBCardBody>
       </MDBCard>
+      );
+
+    })}
+      
     </MDBCol>
   )
 }
-
-export default ProjectsCard;
+  }
