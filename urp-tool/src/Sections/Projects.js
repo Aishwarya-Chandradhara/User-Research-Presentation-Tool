@@ -5,6 +5,7 @@ import ProjectsText from "../Components/ProjectsText";
 import ProjectsIllustration from "../Components/ProjectsIllustration";
 
 class Projects extends Component {
+
     constructor(props) {
       super(props);
       this.state = {};
@@ -20,6 +21,7 @@ class Projects extends Component {
           >
             <ProjectsText />
             <ProjectsIllustration />
+            
           </section>
         </MDBContainer>
       </div>

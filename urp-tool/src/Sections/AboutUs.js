@@ -15,8 +15,8 @@ export default class AboutUs extends Component {
             className='row col-md-12 col-xs-12 responsive-height background-1 no-margin justify-content-end'
           >
           
-          <AboutUsText />
           <AboutUsIllustration />
+          <AboutUsText />
           </section>
         </MDBContainer>
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { MDBSmoothScroll } from "mdbreact";
-
+import { MDBNavLink } from 'mdbreact'
 const ProjectsText = () => {
   return (
     <div className='col-md-6'>
@@ -28,8 +28,16 @@ const ProjectsText = () => {
           borderRadius: "25px",
           border: "none"
         }}
-      >
-        <MDBSmoothScroll to='projects'>Checkout our Projects</MDBSmoothScroll>
+      > 
+        <MDBNavLink
+              style={{
+                color: "#FFFFFF"
+              }}
+              exact
+              to='/projects'
+            >
+              Checkout our projects
+            </MDBNavLink>
       </button>
     </div>
   );

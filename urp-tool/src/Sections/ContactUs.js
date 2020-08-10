@@ -23,8 +23,8 @@ class ContactUs extends Component {
               Contact Us
             </MDBTypography>
             <div className='row col-md-12' style={{ margin: "0" }}>
+            <ContactUsIllustration />
               <ContactUsForm />
-              <ContactUsIllustration />
             </div>
         </MDBContainer>
       </section>
