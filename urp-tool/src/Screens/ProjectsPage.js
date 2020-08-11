@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBTypography, MDBBtn, MDBIcon, MDBNavLink } from "mdbreact";
+import { MDBTypography, MDBIcon, MDBNavLink } from "mdbreact";
 import ProjectsPageText from "../Components/ProjectsPageText";
 import NewFooter from "../Components/NewFooter"
 import ProjectsPageIllustration from "../Components/ProjectsPageIllustration"
@@ -44,15 +44,27 @@ class ProjectsPage extends Component {
           <ProjectsPageText />
           {/* <ProjectsPageIllustration /> */}
           <ProjectsCard projects={this.state.projects} />
-          <MDBBtn color="blue" href="#"> <MDBIcon icon='angle-left' className='ml-2' /> Back to Home
-          <MDBNavLink
+          <button
+        type='button'
+        style={{
+          color: "#FFFFFF",
+          backgroundColor: "#0066FF",
+          marginLeft: "10vw",
+          padding: "8px",
+          borderRadius: "25px",
+          border: "none"
+        }}
+      > 
+        <MDBNavLink
               style={{
                 color: "#FFFFFF"
               }}
-              exact to='/'
-            >
+              exact
+              to='/'
+            > <MDBIcon icon='angle-left' className='ml-2' />
+                  Back to Home
             </MDBNavLink>
-          </MDBBtn>
+      </button>
           <NewFooter />
         </div>
       </section>

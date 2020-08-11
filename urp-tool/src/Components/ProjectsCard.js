@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon, MDBRow } from 'mdbreact';
+import '../App.css'
+
 
 export default class ProjectsCard extends Component {
   constructor(props) {
@@ -15,8 +17,8 @@ export default class ProjectsCard extends Component {
         {this.props.projects && this.props.projects.map((item) => {
           { console.log("item", item) }
           return (
-            <MDBCol size="6" className="d-flex justify-content-around" style={{width: "22rem"}}>
-              <MDBCard>
+            <MDBCol >
+              <MDBCard className="project_card">
                 <MDBCardImage
                   top
                   src={item.image}
@@ -25,7 +27,7 @@ export default class ProjectsCard extends Component {
                   waves
                   alt='MDBCard image cap'
                 />
-                <MDBCardBody>
+                <MDBCardBody className="card-top-border">
                   <MDBCardTitle>{item.title}</MDBCardTitle>
                   <MDBCardText>
                     {item.desc}

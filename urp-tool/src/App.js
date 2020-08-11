@@ -10,9 +10,6 @@ function App() {
       <Switch>
         <Route exact path='/' component={MainPage} />
         <Route path='/projects' component={ProjectsPage} />
-
-
-
       </Switch>
       </BrowserRouter>
     </>
