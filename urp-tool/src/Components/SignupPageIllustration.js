@@ -1,6 +1,6 @@
 import React from "react";
 
-const LoginPageIllustration = () => {
+const SignupPageIllustration = () => {
   return (
     <div className='col-md-6 col-xs-12 col-sm-12'>
         <img
@@ -12,10 +12,10 @@ const LoginPageIllustration = () => {
             marginLeft: "43vh",
             
           }}
-          src={require("../Assets/LoginpageIllustration.png")}
+          src={require("../Assets/SignuppageIllustration.png")}
         />
     </div>
   );
 };
 
-export default LoginPageIllustration;
+export default SignupPageIllustration;

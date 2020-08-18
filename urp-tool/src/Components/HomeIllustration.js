@@ -13,7 +13,7 @@ const HomeIllustration = () => {
           marginTop: "20vh",
           marginLeft: "4vw"
         }}
-        src={require("../Assets/Group 45.png")}
+        src={require("../Assets/HomeIllustration.png")}
       />
       </MDBAnimation>
     </div>

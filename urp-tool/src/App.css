@@ -7,15 +7,85 @@
   pointer-events: none;
 }
 
+.title {
+  margin-top: 80px;
+  color: #0066FF; 
+}
 .project_card {
   width: 25rem;
   margin: 0 auto;
   margin-bottom: 20px;
-  border: 2px solid #1976d2 !important;
+  border: 2px solid #006677 !important;
 }
 
+
 .card-top-border {
-  border-top: 2px solid #1976d2;
+  border-top: 2px solid #006677;
+}
+
+.input-icons { 
+  width: 100%; 
+  margin-bottom: 10px; 
+} 
+
+.icon { 
+  padding: 10px; 
+  min-width: 40px; 
+} 
+
+.center-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+  border: 1px solid #0066FF;
+  border-radius: 10px;
+  padding: 10px;
+  left: 270px;
+}
+
+.signup-card {
+  border: 1px solid #0066FF;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.forgotpassword-card {
+  border: 1px solid #0066FF;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* enable absolute positioning */
+.inner-addon { 
+  position: relative; 
+}
+
+/* style icon */
+.inner-addon .fa {
+position: absolute;
+padding: 10px;
+pointer-events: none;
+color: #0066FF;
+}
+
+/* align icon */
+.left-addon .fa  { left:  0px;}
+.right-addon .fa { right: 0px;}
+
+/* add padding  */
+.left-addon input  { padding-left:  30px; }
+.right-addon input { padding-right: 30px; }
+
+
+.primary-button {
+  background-color: #0066FF;
+  border-color: #0066FF;
+  border-radius: 4px;
+  width: 100%;
+  margin: 0 !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {

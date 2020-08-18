@@ -2,16 +2,15 @@ import React, { Component } from "react";
 import { MDBTypography, MDBIcon, MDBNavLink } from "mdbreact";
 import ProjectsPageText from "../Components/ProjectsPageText";
 import NewFooter from "../Components/NewFooter"
-import ProjectsPageIllustration from "../Components/ProjectsPageIllustration"
 import ProjectsCard from "../Components/ProjectsCard"
-import Bosch from "../Assets/Path 51.png"
-import Puma from "../Assets/Path 52.png"
-import Paypal from "../Assets/Path 53.png"
-import Siemens from "../Assets/Path 54.png"
-import CNN from "../Assets/Path 55.png"
-import Skechers from "../Assets/Path 56.png"
-import Starbucks from "../Assets/Path 57.png"
-import Levis from "../Assets/Path 58.png"
+import Bosch from "../Assets/Bosch.png"
+import Puma from "../Assets/Puma.png"
+import Paypal from "../Assets/Paypal.png"
+import Siemens from "../Assets/Siemens.png"
+import CNN from "../Assets/CNN.png"
+import Skechers from "../Assets/Skechers.png"
+import Starbucks from "../Assets/Starbucks.png"
+import Levis from "../Assets/Levis.png"
 
 class ProjectsPage extends Component {
 
@@ -42,7 +41,6 @@ class ProjectsPage extends Component {
         </MDBTypography>
         <div>
           <ProjectsPageText />
-          {/* <ProjectsPageIllustration /> */}
           <ProjectsCard projects={this.state.projects} />
           <button
         type='button'
