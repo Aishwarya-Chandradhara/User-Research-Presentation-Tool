@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon, MDBRow } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon, MDBRow,MDBNavLink } from 'mdbreact';
 import '../App.css'
 
 
@@ -33,7 +33,17 @@ export default class ProjectsCard extends Component {
                     {item.desc}
                   </MDBCardText>
                   <MDBBtn color="blue" href="#">User Research
-          <MDBIcon icon='angle-right' className='ml-2' /> </MDBBtn>
+          <MDBIcon icon='angle-right' className='ml-2' /> 
+          <MDBNavLink
+              style={{
+                color: "#FFFFFF"
+              }}
+              exact
+              to='/userresearch'
+            >
+
+            </MDBNavLink>
+          </MDBBtn>
                 </MDBCardBody>
               </MDBCard>
 

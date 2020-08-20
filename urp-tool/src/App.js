@@ -4,6 +4,7 @@ import MainPage from "./Screens/MainPage";
 import ProjectsPage from "./Screens/ProjectsPage";
 import LoginPage from "./Screens/LoginPage";
 import Signup from "./Screens/Signup";
+import UserResearchPage from "./Screens/UserResearchPage"
 import ForgotPassword from "./Screens/ForgotPassword";
 
 function App() {
@@ -16,6 +17,8 @@ function App() {
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={Signup} />
         <Route path='/forgotpassword' component={ForgotPassword} />
+        <Route path='/userresearch' component={UserResearchPage} />
+
       </Switch>
       </BrowserRouter>
     </>

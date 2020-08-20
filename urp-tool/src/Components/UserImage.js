@@ -1,6 +1,6 @@
 import React from "react";
 
-const SignupPageIllustration = () => {
+const UserImage = () => {
   return (
     <div >
         <img
@@ -12,10 +12,10 @@ const SignupPageIllustration = () => {
     
             
           }}
-          src={require("../Assets/SignuppageIllustration.png")}
+          src={require("../Assets/user1.png")}
         />
     </div>
   );
 };
 
-export default SignupPageIllustration;
+export default UserImage;

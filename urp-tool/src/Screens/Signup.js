@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { MDBContainer, MDBRow, MDBCol, MDBNavLink } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
 import Popup1 from "../Components/Popup1";
 import SignupPageIllustration from "..//Components/SignupPageIllustration"
 import '../App.css'
@@ -23,14 +23,18 @@ class SignupPage extends Component {
   render() {
     return (
       <MDBContainer>
-            <p className="h2 text-center mb-4 title">
+            <p className="h1 text-center mb-4 title">
                 User Research Presentation Tool
               </p>
         <MDBRow className="center-align">
           <MDBCol md="4" className="signup-card">
             <form onSubmit={this.handleSubmit}>
-              <p className="h6 text-center mb-4">
+              <p className="h4 text-center mb-4">
                Signup
+              </p>
+              <p className="h6 text-left mb-4">
+              Enter your email address and submit to receive an email
+              with instructions to reset your password.
               </p>
               <label htmlFor="defaultFormLoginEmailEx" className="black-text">
                 Email Address

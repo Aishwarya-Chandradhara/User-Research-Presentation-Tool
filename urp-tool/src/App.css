@@ -15,12 +15,12 @@
   width: 25rem;
   margin: 0 auto;
   margin-bottom: 20px;
-  border: 2px solid #006677 !important;
+  border: 2px solid #0066FF !important;
 }
 
 
 .card-top-border {
-  border-top: 2px solid #006677;
+  border-top: 2px solid  #0066FF;
 }
 
 .input-icons { 
@@ -43,7 +43,6 @@
   border: 1px solid #0066FF;
   border-radius: 10px;
   padding: 10px;
-  left: 270px;
 }
 
 .signup-card {
@@ -86,6 +85,11 @@ color: #0066FF;
   border-radius: 4px;
   width: 100%;
   margin: 0 !important;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (prefers-reduced-motion: no-preference) {

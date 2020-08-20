@@ -24,13 +24,13 @@ class ForgotPassword extends Component {
     return (
       
       <MDBContainer>
-      <p className="h2 text-center mb-4 title">
+      <p className="h1 text-center mb-4 title">
                 User Research Presentation Tool
               </p>
         <MDBRow className="center-align">
           <MDBCol md="4" className="forgotpassword-card">
             <form onSubmit={this.handleSubmit}>
-              <p className="h6 text-left mb-4">
+              <p className="h4 text-left mb-4">
                 Forgot Password?
               </p>
               <p className="h6 text-left mb-4">
@@ -52,7 +52,7 @@ class ForgotPassword extends Component {
               <br />
               <div className="text-center mt-4">
                 <button
-                  class="btn Ripple-parent"
+                   class="btn Ripple-parent primary-button"
                   style={{ background: "#0066FF", color: "white" }}
                   type="submit"
                 >
@@ -64,8 +64,8 @@ class ForgotPassword extends Component {
               <Popup2 closePopup={this.closePopup} />
             ) : null}
           </MDBCol>
+          <ForgotPasswordIllustration />
         </MDBRow>
-        <ForgotPasswordIllustration />
       </MDBContainer>
     );
   }

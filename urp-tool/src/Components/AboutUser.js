@@ -1,15 +1,19 @@
 import React from "react";
-import { MDBNavLink } from "mdbreact";
-const ProjectsText = () => {
+const AboutUser = () => {
   return (
-    <div className="col-md-6">
+    <div className="col-md-12">
       <div style={{ marginTop: "20vh", marginLeft: "10vw" }}>
         <h1 style={{ color: "#222222" }} class="h1-responsive">
-          Projects
+          Alicia Schneider
         </h1>
       </div>
+      <div style={{ marginTop: "10vh", marginLeft: "10vw" }}>
+        <h2 style={{ color: "#222222" }} class="h2-responsive">
+          About
+        </h2>
+      </div>
       <div style={{ marginLeft: "10vw" }}>
-        <p style={{ color: "#222222" }}>
+        <p style={{ color: "#222222", text: "justify" }}>
           Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
           nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
           sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
@@ -18,29 +22,8 @@ const ProjectsText = () => {
           sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore e
         </p>
       </div>
-      <button
-        type="button"
-        style={{
-          color: "#FFFFFF",
-          backgroundColor: "#0066FF",
-          marginLeft: "10vw",
-          padding: "8px",
-          borderRadius: "25px",
-          border: "none",
-        }}
-      >
-        <MDBNavLink
-          style={{
-            color: "#FFFFFF",
-          }}
-          exact
-          to="/projects"
-        >
-          Checkout our projects
-        </MDBNavLink>
-      </button>
     </div>
   );
 };
 
-export default ProjectsText;
+export default AboutUser;

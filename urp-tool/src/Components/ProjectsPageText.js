@@ -2,7 +2,7 @@ import React from "react";
 
 const ProjectsPageText = () => {
   return (
-    <div className='col-md-12 text-center'>
+    <div className='col-md-12 text-center, justify'>
       <div style={{ marginTop: "2vh" }}>
         <p style={{ color: "#222222" }}>
         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore

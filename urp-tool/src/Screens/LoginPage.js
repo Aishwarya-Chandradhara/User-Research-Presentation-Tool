@@ -14,7 +14,7 @@ class LoginPage extends Component {
   render() {
     return (
       <MDBContainer>
-            <p className="h2 text-center mb-4 title">
+            <p className="h1 text-center mb-4 title">
                 User Research Presentation Tool
               </p>
               
