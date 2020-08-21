@@ -8,7 +8,7 @@ const ContactUsIllustration = () => {
       <img
         alt='Thesis'
         style={{
-          width: "100%",
+          width: "auto",
           height: "400px",
           marginTop: "20vh",
           marginLeft: "4vw"

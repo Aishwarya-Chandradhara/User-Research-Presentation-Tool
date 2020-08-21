@@ -5,7 +5,7 @@ const UserInfo = () => {
   return (
     <MDBContainer>
       <div className="col-md-12 text-center">
-        <div style={{ marginTop: "2vh" }}>
+        <div style={{ marginTop: "2vh", color: "white" }}>
         <p className="user-info text-left"><span>Age</span><span>24</span></p>
         <p className="user-info text-left"><span>Job Title</span><span>Web Designer</span></p>
         <p className="user-info text-left"><span>Gender</span><span>Female</span></p>

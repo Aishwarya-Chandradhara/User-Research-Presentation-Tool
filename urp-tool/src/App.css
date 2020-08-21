@@ -87,9 +87,23 @@ color: #0066FF;
   margin: 0 !important;
 }
 
+.progress-bar {
+  width: 20px;
+}
+
 .user-info {
   display: flex;
   justify-content: space-between;
+}
+
+.badges-user {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.progress-bar{
+  background-color: #0066FF !important;
 }
 
 @media (prefers-reduced-motion: no-preference) {

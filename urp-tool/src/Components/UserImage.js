@@ -2,14 +2,18 @@ import React from "react";
 
 const UserImage = () => {
   return (
-    <div >
+    <div style={{
+      marginTop: "20vh",
+      marginBottom: "10vh"
+
+    }}>
         <img
           alt='Thesis'
           style={{
             width: "auto",
             height: "200px",
-            marginTop: "20vh",
-    
+            display: "block",
+            margin: "auto"
             
           }}
           src={require("../Assets/user1.png")}

@@ -6,6 +6,7 @@ import LoginPage from "./Screens/LoginPage";
 import Signup from "./Screens/Signup";
 import UserResearchPage from "./Screens/UserResearchPage"
 import ForgotPassword from "./Screens/ForgotPassword";
+import AdminPage from "./Screens/AdminPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path='/signup' component={Signup} />
         <Route path='/forgotpassword' component={ForgotPassword} />
         <Route path='/userresearch' component={UserResearchPage} />
+        <Route path='/adminpage' component={AdminPage} />
 
       </Switch>
       </BrowserRouter>
