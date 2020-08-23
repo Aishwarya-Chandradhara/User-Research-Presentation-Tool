@@ -7,6 +7,8 @@ import Signup from "./Screens/Signup";
 import UserResearchPage from "./Screens/UserResearchPage"
 import ForgotPassword from "./Screens/ForgotPassword";
 import AdminPage from "./Screens/AdminPage";
+import AddProjects from "./Screens/AddProjects";
+import AddUserResearch from "./Screens/AddUserResearch"
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
         <Route path='/forgotpassword' component={ForgotPassword} />
         <Route path='/userresearch' component={UserResearchPage} />
         <Route path='/adminpage' component={AdminPage} />
+        <Route path='/addprojects' component={AddProjects} />
+        <Route path='/adduserresearch' component={AddUserResearch} />
 
       </Switch>
       </BrowserRouter>

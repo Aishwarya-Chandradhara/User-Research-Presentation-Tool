@@ -1,0 +1,37 @@
+[{
+    image:"",
+    bio:"",
+    age:"",
+    jobTitle:"",
+    gender:"",
+    location:"",
+    labels:"",
+    title:"",
+    about:"",
+    goals:"",
+    needs:"",
+    challenges:"",
+    skills:{
+        skillName:"",
+        skillValue:""
+    }
+},
+{
+    image:"",
+    bio:"",
+    age:"",
+    jobTitle:"",
+    gender:"",
+    location:"",
+    labels:"",
+    title:"",
+    about:"",
+    goals:"",
+    needs:"",
+    challenges:"",
+    skills:{
+        skillName:"",
+        skillValue:""
+    }
+},
+]
