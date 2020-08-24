@@ -93,7 +93,7 @@ class AdminNavbar extends Component {
                   to='#!'
                 >
                   <MDBSmoothScroll to='aboutus' style={{ color: "#FFFFFF" }}>
-                    Logged in as Admin
+                    Logout
                   </MDBSmoothScroll>
                 </MDBNavLink>
               </MDBNavItem>

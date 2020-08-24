@@ -12,7 +12,7 @@ class UserResearchPage extends Component {
     }
     render() {
       return (
-        <section className='col-md-12 background-4'>
+        <section>
         <MDBTypography
           tag='h3'
           variant='h3-responsive'

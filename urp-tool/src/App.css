@@ -9,29 +9,28 @@
 
 .title {
   margin-top: 80px;
-  color: #0066FF; 
+  color: #0066ff;
 }
 .project_card {
   width: 25rem;
   margin: 0 auto;
   margin-bottom: 20px;
-  border: 2px solid #0066FF !important;
+  border: 2px solid #0066ff !important;
 }
-
 
 .card-top-border {
-  border-top: 2px solid  #0066FF;
+  border-top: 2px solid #0066ff;
 }
 
-.input-icons { 
-  width: 100%; 
-  margin-bottom: 10px; 
-} 
+.input-icons {
+  width: 100%;
+  margin-bottom: 10px;
+}
 
-.icon { 
-  padding: 10px; 
-  min-width: 40px; 
-} 
+.icon {
+  padding: 10px;
+  min-width: 40px;
+}
 
 .center-align {
   display: flex;
@@ -40,65 +39,80 @@
 }
 
 .login-card {
-  border: 1px solid #0066FF;
+  border: 1px solid #0066ff;
   border-radius: 10px;
   padding: 10px;
 }
 
 .signup-card {
-  border: 1px solid #0066FF;
+  border: 1px solid #0066ff;
   border-radius: 10px;
   padding: 10px;
 }
 
 .forgotpassword-card {
-  border: 1px solid #0066FF;
+  border: 1px solid #0066ff;
   border-radius: 10px;
   padding: 10px;
 }
 
+.footer-color {
+  background-color: #0066ff !important;
+}
 /* enable absolute positioning */
-.inner-addon { 
-  position: relative; 
+.inner-addon {
+  position: relative;
 }
 
 /* style icon */
 .inner-addon .fa {
-position: absolute;
-padding: 10px;
-pointer-events: none;
-color: #0066FF;
+  position: absolute;
+  padding: 10px;
+  pointer-events: none;
+  color: #0066ff;
+}
+
+.custom-skill {
+  border: 1px solid blue;
+  padding: 5px;
 }
 
 /* align icon */
-.left-addon .fa  { left:  0px;}
-.right-addon .fa { right: 0px;}
+.left-addon .fa {
+  left: 0px;
+}
+.right-addon .fa {
+  right: 0px;
+}
 
 /* add padding  */
-.left-addon input  { padding-left:  30px; }
-.right-addon input { padding-right: 30px; }
-
+.left-addon input {
+  padding-left: 30px;
+}
+.right-addon input {
+  padding-right: 30px;
+}
 
 .primary-button {
-  background-color: #0066FF;
-  border-color: #0066FF;
+  background-color: #0066ff;
+  border-color: #0066ff;
   border-radius: 4px;
   width: 100%;
   margin: 0 !important;
 }
 
-.custom-dropdown{
-  width : 180px;
+.custom-dropdown {
+  width: 180px;
   height: 38px;
   padding-top: 0.375rem;
   padding-right: 0.75rem;
   padding-bottom: 0.375rem;
   padding-left: 0.75rem;
   margin: 4px;
-  border: solid black; 
+  border: solid black;
 }
-.btn-primary{
-  background-color: #FFFFFF
+.btn-primary {
+  background-color: #ffffff;
 }
 
 .progress-bar {
@@ -116,8 +130,18 @@ color: #0066FF;
   margin-bottom: 20px;
 }
 
-.progress-bar{
-  background-color: #0066FF !important;
+.progress-bar {
+  background-color: #0066ff !important;
+}
+
+.background-class {
+  background-image: url("./Assets/ProjectsPageBackground.png");
+  background-size: contain;
+}
+
+.background1-class {
+  background-image: url("./Assets/UserProfileBackground.png");
+  background-size: contain;
 }
 
 @media (prefers-reduced-motion: no-preference) {

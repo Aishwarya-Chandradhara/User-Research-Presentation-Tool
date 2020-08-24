@@ -33,8 +33,7 @@ class SignupPage extends Component {
                Signup
               </p>
               <p className="h6 text-left mb-4">
-              Enter your email address and submit to receive an email
-              with instructions to reset your password.
+              Enter your email address and set a password.
               </p>
               <label htmlFor="defaultFormLoginEmailEx" className="black-text">
                 Email Address
@@ -46,8 +45,17 @@ class SignupPage extends Component {
                 id="defaultFormLoginEmailEx"
                 className="form-control"
               />
+              <br />
+              <label>Password</label>
+                <div class="inner-addon left-addon">
+                    <input type="password" class="form-control" />
+                </div>
               </div>
               <br />
+              <label>Confirm Password</label>
+                <div class="inner-addon left-addon">
+                    <input type="password" class="form-control" />
+                </div>
               <div className="text-center mt-4">
               <button
                   class="btn Ripple-paren t primary-button"
@@ -72,5 +80,4 @@ class SignupPage extends Component {
     );
   }
 }
-
 export default SignupPage;

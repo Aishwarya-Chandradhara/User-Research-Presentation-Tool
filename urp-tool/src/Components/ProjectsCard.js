@@ -13,7 +13,7 @@ export default class ProjectsCard extends Component {
   render() {
 
     return (
-      <MDBRow>
+      <MDBRow className="background-class">
         {this.props.projects && this.props.projects.map((item) => {
           { console.log("item", item) }
           return (

@@ -4,7 +4,7 @@ import { MDBProgress } from 'mdbreact';
 const UserProgressBar = () => {
   return (
     <>
-    <div>
+    <div className= "background1-class">
         <h2 style={{ color: "#222222" }} class="h2-responsive">
           Skills
         </h2>

@@ -3,9 +3,9 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter, MDBSmoothScroll } from "mdbrea
 
 const Footer = () => {
   return (
-    <MDBFooter color="blue" className="font-small pt-4 mt-4">
+    <MDBFooter className="font-small mt-4, footer-color">
       <MDBContainer className="text-center text-md-left">
-      <MDBRow className='text-center text-md-left mt-3 pb-3'>
+      <MDBRow className='text-center text-md-left mt-3'>
             <MDBCol md='3' lg='3' xl='3' className='mx-auto mt-3'>
               <h6
                 style={{ color: "#FFFFFF" }}
