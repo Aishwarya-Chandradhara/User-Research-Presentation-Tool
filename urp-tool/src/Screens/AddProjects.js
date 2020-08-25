@@ -4,7 +4,7 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBSmoothScroll,
+
   MDBNavLink,
   MDBIcon
 } from "mdbreact";
@@ -12,11 +12,25 @@ import AddProjectsText from "../Components/AddProjectsText";
 import NewFooter from "../Components/NewFooter";
 import AddProjectsIllustration from "../Components/AddProjectsIllustration";
 import FileUpload from "../Components/FileUpload";
+import {db} from "../firebase"
+
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { desc: null , title: null};
+  }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    })
+  }
+  submitForm = (event) => {
+    event.preventDefault();
+    db.collection("projects")
+    .add(this.state)
+    .then(this.setState({redirect: true}))
+    .catch((error) => console.log(error));
   }
   render() {
     return (
@@ -41,8 +55,7 @@ class AddProjects extends Component {
                 >
                   <form
                     onSubmit={this.submitForm}
-                    action="https://formspree.io/mpzqowjw"
-                    method="POST"
+
                   >
                     {/* <AddProjectsIllustration /> */}
                     <p
@@ -60,7 +73,8 @@ class AddProjects extends Component {
                     </label>
                     <input
                       type="text"
-                      id="defaultFormcompanyname"
+                      id="title"
+                      onChange={this.handleChange}
                       className="form-control"
                       style={{
                         backgroundColor: "#FFFFFF",
@@ -72,16 +86,17 @@ class AddProjects extends Component {
                     <br />
 
                     <label
-                      htmlFor="defaultFormMessage"
+                      htmlFor="projectdesc"
                       style={{ color: "#222222" }}
                       className="font_medium"
                     >
-                      Message
+                      Project Description
                     </label>
                     <textarea
                       type="text"
                       name="message"
-                      id="defaultFormMessage"
+                      id="desc"
+                      onChange={this.handleChange}
                       className="form-control"
                       rows="3"
                       style={{
@@ -110,7 +125,7 @@ class AddProjects extends Component {
                       }}
                     >
                     <button
-                      type="button"
+                      type="submit"
                       style={{
                         color: "#FFFFFF",
                         width: "40%",
@@ -120,22 +135,23 @@ class AddProjects extends Component {
                         border: "none",
                       }}
                     >
-                      <MDBSmoothScroll>Submit</MDBSmoothScroll>
+                      <p>Submit</p>
                     </button>
-
-                    <button
+                    
+                    <MDBNavLink to="/">
+                      <button
                       type="button"
                       style={{
                         color: "#000000",
-                        width: "40%",
                         backgroundColor: "#FFFFFF",
                         padding: "4px",
                         borderRadius: "15px",
                         border: "2px solid #000000",
-                      }}
-                    >
-                      <MDBSmoothScroll>Cancel</MDBSmoothScroll>
+                        width: "100%"
+                      }}>
+                      Cancel
                     </button>
+                    </MDBNavLink>
                     </div>
                   </form>
                 </MDBCol>

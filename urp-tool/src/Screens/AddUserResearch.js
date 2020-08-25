@@ -4,7 +4,6 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-  MDBSmoothScroll,
   MDBRangeInput,
   MDBNavLink,
   MDBIcon,
@@ -13,12 +12,35 @@ import FileUpload from "../Components/FileUpload";
 import AddUserResearchText from "../Components/AddUserResearchText";
 import NewFooter from "../Components/NewFooter";
 import AddUserResearchIllustration from "../Components/AddUserResearchIllustration";
+import {db } from "../firebase"
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      name: null,
+      age: null,
+      location: null,
+      about: null,
+      goals: null,
+      needs: null,
+      challenges: null,
+      message: null,
+    };
   }
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value,
+    });
+  };
+  submitForm = (event) => {
+    event.preventDefault();
+    // console.log(this.state)
+    db.collection("userprofile")
+      .add(this.state)
+      .then(this.setState({ redirect: true }))
+      .catch((error) => console.log(error));
+  };
   render() {
     return (
       <section className="background-4">
@@ -40,11 +62,7 @@ class AddProjects extends Component {
                   className="col-md-10"
                   style={{ border: "1px solid blue", marginBottom: "20vh" }}
                 >
-                  <form
-                    onSubmit={this.submitForm}
-                    action="https://formspree.io/mpzqowjw"
-                    method="POST"
-                  >
+                  <form onSubmit={this.submitForm}>
                     <p
                       className="h5 text-center mb-4 font_bold"
                       style={{ color: "#222222", paddingTop: "8vh" }}
@@ -54,7 +72,7 @@ class AddProjects extends Component {
                     <div className="row col-md-12">
                       <div className="col-md-4">
                         <label
-                          htmlFor="defaultFormName"
+                          htmlFor="name"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -62,7 +80,8 @@ class AddProjects extends Component {
                         </label>
                         <input
                           type="text"
-                          id="defaultFormName"
+                          id="name"
+                          onChange={this.handleChange}
                           className="form-control"
                           style={{
                             backgroundColor: "#FFFFFF",
@@ -74,7 +93,7 @@ class AddProjects extends Component {
                       </div>
                       <div className="col-md-4">
                         <label
-                          htmlFor="defaultFormName"
+                          htmlFor="gender"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -93,15 +112,16 @@ class AddProjects extends Component {
                       </div>
                       <div className="col-md-4">
                         <label
-                          htmlFor="defaultFormName"
+                          htmlFor="age"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
                           Age
                         </label>
                         <input
-                          type="number"
-                          id="defaultFormAGe"
+                          type="age"
+                          id="age"
+                          onChange={this.handleChange}
                           className="form-control"
                           style={{
                             backgroundColor: "#FFFFFF",
@@ -116,7 +136,7 @@ class AddProjects extends Component {
                     <div className="row col-md-12">
                       <div className="col-md-4">
                         <label
-                          htmlFor="defaultFormName"
+                          htmlFor="jobtitle"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -124,8 +144,9 @@ class AddProjects extends Component {
                         </label>
                         <br />
                         <select
-                          name="jobTitle"
-                          id="jobTitle"
+                          name="jobtitle"
+                          id="jobtitle"
+                          onChange={this.handleChange}
                           className="custom-dropdown"
                         >
                           <option value="UI/UX Designer">UI/UX Designer</option>
@@ -136,7 +157,7 @@ class AddProjects extends Component {
                       <br />
                       <div className="col-md-4">
                         <label
-                          htmlFor="defaultFormLocation"
+                          htmlFor="location"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -144,7 +165,8 @@ class AddProjects extends Component {
                         </label>
                         <input
                           type="text"
-                          id="defaultFormLocation"
+                          id="location"
+                          onChange={this.handleChange}
                           className="form-control"
                           style={{
                             backgroundColor: "#FFFFFF",
@@ -157,7 +179,7 @@ class AddProjects extends Component {
                       <br />
                       <div className="col-md-4">
                         <label
-                          htmlFor="defaultForm"
+                          htmlFor="uploadimage"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -171,7 +193,7 @@ class AddProjects extends Component {
                     <div className="row col-md-12">
                       <div className="col-md-6">
                         <label
-                          htmlFor="defaultFormAbout"
+                          htmlFor="about"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -180,7 +202,8 @@ class AddProjects extends Component {
                         <textarea
                           type="text"
                           name="about"
-                          id="defaultFormAbout"
+                          id="about"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -194,7 +217,7 @@ class AddProjects extends Component {
                       <br />
                       <div className="col-md-6">
                         <label
-                          htmlFor="defaultFormGoals"
+                          htmlFor="goals"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -203,7 +226,8 @@ class AddProjects extends Component {
                         <textarea
                           type="text"
                           name="goals"
-                          id="defaultFormGoals"
+                          id="goals"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -219,7 +243,7 @@ class AddProjects extends Component {
                     <div className="row col-md-12">
                       <div className="col-md-6">
                         <label
-                          htmlFor="defaultFormNeeds"
+                          htmlFor="needs"
                           style={{ color: "#222222" }}
                           className="font_medium"
                         >
@@ -229,7 +253,8 @@ class AddProjects extends Component {
                         <textarea
                           type="text"
                           name="needs"
-                          id="defaultFormNeeds"
+                          id="needs"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -252,7 +277,8 @@ class AddProjects extends Component {
                         <textarea
                           type="text"
                           name="challenges"
-                          id="defaultFormChallenges"
+                          id="challenges"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -268,7 +294,7 @@ class AddProjects extends Component {
 
                     <div className="col-md-6">
                       <label
-                        htmlFor="defaultFormMessage"
+                        htmlFor="message"
                         style={{ color: "#222222" }}
                         className="font_medium"
                       >
@@ -277,7 +303,8 @@ class AddProjects extends Component {
                       <textarea
                         type="text"
                         name="message"
-                        id="defaultFormMessage"
+                        id="message"
+                        onChange={this.handleChange}
                         className="form-control"
                         rows="3"
                         style={{
@@ -293,7 +320,7 @@ class AddProjects extends Component {
                       <div className="col-md-6">
                         <h6>Skills</h6>
                         <label
-                          htmlFor="defaultForm"
+                          htmlFor="design"
                           style={{ color: "#222222", marginTop: "20px" }}
                           className="font_medium"
                         >
@@ -308,7 +335,7 @@ class AddProjects extends Component {
                         />
                         <div className="my-5">
                           <label
-                            htmlFor="defaultForm"
+                            htmlFor="development"
                             style={{ color: "#222222" }}
                             className="font_medium"
                           >
@@ -324,7 +351,7 @@ class AddProjects extends Component {
                         </div>
                         <div className="my-5">
                           <label
-                            htmlFor="defaultForm"
+                            htmlFor="testing"
                             style={{ color: "#222222" }}
                             className="font_medium"
                           >
@@ -564,11 +591,11 @@ class AddProjects extends Component {
                           border: "2px solid #000000",
                         }}
                       >
-                        <MDBSmoothScroll>Cancel</MDBSmoothScroll>
+                        Cancel
                       </button>
 
                       <button
-                        type="button"
+                        type="submit"
                         style={{
                           color: "#FFFFFF",
                           backgroundColor: "#0066FF",
@@ -578,7 +605,7 @@ class AddProjects extends Component {
                           border: "none",
                         }}
                       >
-                        <MDBSmoothScroll>Submit</MDBSmoothScroll>
+                        Submit
                       </button>
                     </div>
                   </form>

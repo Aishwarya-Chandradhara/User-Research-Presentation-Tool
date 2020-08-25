@@ -19,8 +19,6 @@ class ContactUsForm extends Component {
               <MDBCol md='10' style={{ marginTop: "20px" }}>
                 <form 
                   onSubmit={this.submitForm}
-                  action='https://formspree.io/mpzqowjw'
-                  method='POST'
                 >
                   <p
                     className='h5 text-center mb-4 font_bold'

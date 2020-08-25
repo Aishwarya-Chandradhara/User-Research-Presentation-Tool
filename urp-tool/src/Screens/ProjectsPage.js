@@ -3,30 +3,29 @@ import { MDBTypography, MDBIcon, MDBNavLink } from "mdbreact";
 import ProjectsPageText from "../Components/ProjectsPageText";
 import NewFooter from "../Components/NewFooter"
 import ProjectsCard from "../Components/ProjectsCard"
-import Bosch from "../Assets/Bosch.png"
-import Puma from "../Assets/Puma.png"
-import Paypal from "../Assets/Paypal.png"
-import Siemens from "../Assets/Siemens.png"
-import CNN from "../Assets/CNN.png"
-import Skechers from "../Assets/Skechers.png"
-import Starbucks from "../Assets/Starbucks.png"
-import Levis from "../Assets/Levis.png"
+import {db } from "../firebase"
 
 class ProjectsPage extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      projects: [{ image: Bosch, title: "project1", desc: "desc1" },
-      { image: Puma, title: "project2", desc: "desc2" },
-      { image: Paypal, title: "project3", desc: "desc3" },
-      { image: Siemens, title: "project3", desc: "desc3", },
-      { image: CNN, title: "project4", desc: "desc4" },
-      { image: Skechers, title: "project5", desc: "desc5" },
-      { image: Starbucks, title: "project6", desc: "desc6" },
-      { image: Levis, title: "project7", desc: "desc7" },
-      ]
+      projects: []
     }
+  }
+  componentDidMount() {
+    console.log("mounted");
+    db.collection("projects")
+      .get()
+      .then((snapshot) => {
+        var pro = [];
+        snapshot.forEach((doc) => {
+          let data = doc.data();
+          pro.push(data);
+        });
+        this.setState({ projects: pro, loaded: true });
+      })
+      .catch((error) => console.log(error));
   }
   render() {
     return (
@@ -41,7 +40,10 @@ class ProjectsPage extends Component {
         </MDBTypography>
         <div>
           <ProjectsPageText />
-          <ProjectsCard projects={this.state.projects} />
+          {this.state.loaded
+          ? <ProjectsCard projects={this.state.projects} />
+          : null}
+          {/* <ProjectsCard projects={this.state.projects} /> */}
           <button
         type='button'
         style={{
