@@ -5,6 +5,8 @@ import {
   MDBRow,
   MDBCol,
   MDBSmoothScroll,
+  MDBNavLink,
+  MDBIcon
 } from "mdbreact";
 import AddProjectsText from "../Components/AddProjectsText";
 import NewFooter from "../Components/NewFooter";
@@ -141,6 +143,28 @@ class AddProjects extends Component {
             </MDBContainer>
           </div>
         </div>
+        <button
+            type="button"
+            style={{
+              color: "#FFFFFF",
+              backgroundColor: "#0066FF",
+              marginLeft: "10vw",
+              padding: "8px",
+              borderRadius: "25px",
+              border: "none",
+            }}
+          >
+            <MDBNavLink
+              style={{
+                color: "#FFFFFF",
+              }}
+              exact
+              to="/" >
+              {" "}
+              <MDBIcon icon="angle-left" className="ml-2" />
+              Back to Home
+            </MDBNavLink>
+          </button>
         <NewFooter />
       </section>
     );

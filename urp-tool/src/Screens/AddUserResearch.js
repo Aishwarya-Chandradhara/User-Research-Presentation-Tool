@@ -6,6 +6,8 @@ import {
   MDBCol,
   MDBSmoothScroll,
   MDBRangeInput,
+  MDBNavLink,
+  MDBIcon,
 } from "mdbreact";
 import FileUpload from "../Components/FileUpload";
 import AddUserResearchText from "../Components/AddUserResearchText";
@@ -31,10 +33,13 @@ class AddProjects extends Component {
         <div>
           <AddUserResearchText />
           <div>
-         <AddUserResearchIllustration />
+            <AddUserResearchIllustration />
             <MDBContainer>
               <MDBRow className="center-align">
-                <MDBCol className="col-md-10" style={{border: "1px solid blue",  marginBottom: "20vh"}}>
+                <MDBCol
+                  className="col-md-10"
+                  style={{ border: "1px solid blue", marginBottom: "20vh" }}
+                >
                   <form
                     onSubmit={this.submitForm}
                     action="https://formspree.io/mpzqowjw"
@@ -107,7 +112,7 @@ class AddProjects extends Component {
                         />
                       </div>
                     </div>
-                    <br/>
+                    <br />
                     <div className="row col-md-12">
                       <div className="col-md-4">
                         <label
@@ -161,7 +166,7 @@ class AddProjects extends Component {
                         <FileUpload />
                       </div>
                     </div>
-                    <br/>
+                    <br />
 
                     <div className="row col-md-12">
                       <div className="col-md-6">
@@ -335,8 +340,6 @@ class AddProjects extends Component {
                         </div>
                       </div>
                       <div className="col-md-6">
-                        
-                          
                         <h6>Personality</h6>
                         <div class="custom-control custom-checkbox">
                           <input
@@ -347,9 +350,198 @@ class AddProjects extends Component {
                           <label
                             class="custom-control-label custom-skill"
                             for="defaultChecked2"
-                          >Enthusiastic</label>
+                          >
+                            Enthusiastic
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Go Getter
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Go Getter
+                          </label>
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Sociable
+                          </label>
+                        </div>
+
+                        <br />
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Team Player
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Attentive
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Organized
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Passionate
+                          </label>
                         </div>
                         <br />
+
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Dependable
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Motivated
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Creative
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Proactive
+                          </label>
+                        </div>
+                        <br />
+
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Maverick
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Elevated
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Friendly
+                          </label>
+
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="defaultChecked2"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="defaultChecked2"
+                          >
+                            Thoughtful
+                          </label>
+                        </div>
                       </div>
                     </div>
 
@@ -395,6 +587,29 @@ class AddProjects extends Component {
             </MDBContainer>
           </div>
         </div>
+        <button
+          type="button"
+          style={{
+            color: "#FFFFFF",
+            backgroundColor: "#0066FF",
+            marginLeft: "10vw",
+            padding: "8px",
+            borderRadius: "25px",
+            border: "none",
+          }}
+        >
+          <MDBNavLink
+            style={{
+              color: "#FFFFFF",
+            }}
+            exact
+            to="/addprojects"
+          >
+            {" "}
+            <MDBIcon icon="angle-left" className="ml-2" />
+            Back to Add Projects
+          </MDBNavLink>
+        </button>
         <NewFooter />
       </section>
     );
