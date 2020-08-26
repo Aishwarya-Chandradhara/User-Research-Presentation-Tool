@@ -18,6 +18,7 @@ class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      val : ["test", "test2"]
     };
   }
 
@@ -55,7 +56,7 @@ class AddProjects extends Component {
     // event.preventDefault();
     db.collection("userprofile")
       .add(this.state)
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error));
   };
 
   render() {
@@ -395,8 +396,34 @@ class AddProjects extends Component {
                           />
                         </div>
                       </div>
+                      <h6>Personality</h6>
                       <div className="col-md-6">
-                        <h6>Personality</h6>
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="Enthusiastic"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="Enthusiastic"
+                          >
+                            Enthusiastic
+                          </label>
+                          </div>
+                        <div class="custom-control custom-checkbox">
+                          <input
+                            type="checkbox"
+                            class="custom-control-input"
+                            id="Getter"
+                          />
+                          <label
+                            class="custom-control-label custom-skill"
+                            for="Getter"
+                          >
+                            Go Getter
+                          </label>
+                        </div>
                         <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
@@ -407,200 +434,185 @@ class AddProjects extends Component {
                             class="custom-control-label custom-skill"
                             for="defaultChecked2"
                           >
-                            Enthusiastic
-                          </label>
-
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="defaultChecked2"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="defaultChecked2"
-                          >
                             Go Getter
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Sociable"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
-                          >
-                            Go Getter
-                          </label>
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="defaultChecked2"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Sociable"
                           >
                             Sociable
                           </label>
                         </div>
-
+                        </div>
+                        <div class="custom-control custom-checkbox">
                         <br />
                         <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="TeamPlayer"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="TeamPlayer"
                           >
                             Team Player
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Attentive"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Attentive"
                           >
                             Attentive
                           </label>
-
+                        </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Organized"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Organized"
                           >
                             Organized
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Passionate"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Passionate"
                           >
                             Passionate
                           </label>
                         </div>
                         <br />
-
+                        </div>
                         <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Dependable"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Dependable"
                           >
                             Dependable
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Motivated"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Motivated"
                           >
                             Motivated
                           </label>
-
+                        </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Creative"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Creative"
                           >
                             Creative
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Proactive"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Proactive"
                           >
                             Proactive
                           </label>
                         </div>
                         <br />
-
+                        </div>
                         <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Maverick"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Maverick"
                           >
                             Maverick
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Elevated"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Elevated"
                           >
                             Elevated
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Friendly"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Friendly"
                           >
                             Friendly
                           </label>
-
+                          </div>
+                        <div class="custom-control custom-checkbox">
                           <input
                             type="checkbox"
                             class="custom-control-input"
-                            id="defaultChecked2"
+                            id="Thoughtful"
                           />
                           <label
                             class="custom-control-label custom-skill"
-                            for="defaultChecked2"
+                            for="Thoughtful"
                           >
                             Thoughtful
                           </label>
                         </div>
-                      </div>
-                    </div>
-
                     <div
                       className="row col-md-6"
                       style={{

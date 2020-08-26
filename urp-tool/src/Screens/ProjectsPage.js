@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { MDBTypography, MDBIcon, MDBNavLink } from "mdbreact";
+import { MDBTypography, MDBIcon, MDBNavLink,MDBSpinner  } from "mdbreact";
 import ProjectsPageText from "../Components/ProjectsPageText";
 import NewFooter from "../Components/NewFooter"
 import ProjectsCard from "../Components/ProjectsCard"
+import Spinner from "../Components/Spinner"
 import {db } from "../firebase"
 
 class ProjectsPage extends Component {
@@ -42,7 +43,8 @@ class ProjectsPage extends Component {
           <ProjectsPageText />
           {this.state.loaded
           ? <ProjectsCard projects={this.state.projects} />
-          : null}
+          : <Spinner />}
+          <br/>
           {/* <ProjectsCard projects={this.state.projects} /> */}
           <button
         type='button'

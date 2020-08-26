@@ -32,24 +32,18 @@ export default class ProjectsCard extends Component {
                   <MDBCardText>
                     {item.desc}
                   </MDBCardText>
-                  <MDBBtn color="blue" href="#">User Research
-          <MDBIcon icon='angle-right' className='ml-2' /> 
-          <MDBNavLink
-              style={{
-                color: "#FFFFFF"
-              }}
-              exact
-              to='/userresearch'
-            >
-
-            </MDBNavLink>
-          </MDBBtn>
+                  <MDBNavLink
+                      style={{color: "#FFFFFF"}}
+                      exact
+                      to='/userresearch/'
+                      // to={'/userresearch/'+[item.title]}
+                    >
+                    <MDBBtn color="blue" href="#">User Research
+                      <MDBIcon icon='angle-right' className='ml-2' /> 
+                    </MDBBtn>
+                  </MDBNavLink>
                 </MDBCardBody>
               </MDBCard>
-
-
-
-
             </MDBCol>
           );
         })}
