@@ -10,11 +10,16 @@ const AboutUsText = () => {
       </div>
       <div>
         <p style={{ color: "#222222" }}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore e
+        With the growing need for designers to showcase their User Research and the 
+        advance in technology, we believe that the development of an online application 
+        to present researches is beneficial. We encourage clients and fellow colleagues 
+        to understand the importance of user research. 
+        <br />
+        </p>
+        <p style={{ color: "#222222" }}>
+        We understand the need for attractive user research presentations and would like
+        our clients to understand its importance too. 
+        We dexter impressive ways to present solutions with great user experience.
         </p>
       </div>
     </div>

@@ -11,11 +11,16 @@ const ProjectsAdminText = () => {
       </div>
       <div style={{ marginLeft: "10vw" }}>
         <p style={{ color: "#222222" }}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod 
-        tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
-        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-        no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
-        consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore e
+        <p style={{ color: "#222222" }}>
+        We engage ourselves with multiple projects for various companies, creating 
+        and designing interesting applications that suit their intersets by conducting 
+        user research to gather requirements. From Mobile to Online Applications all 
+        designed and developed based on user intersets. 
+        </p>
+        <p style={{ color: "#222222" }}>
+        Take a look at some of the companies we were involved with to create projects.<br/>
+        You can also add new projects with companies.
+        </p>
         </p>
       </div>
 

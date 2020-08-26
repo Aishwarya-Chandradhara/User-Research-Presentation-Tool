@@ -18,29 +18,48 @@ class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: null,
-      age: null,
-      location: null,
-      about: null,
-      goals: null,
-      needs: null,
-      challenges: null,
-      message: null,
+      value: ""
     };
   }
+
+  handleSelectChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+
+  handleSliderChangeDesign = (val) => {
+    this.setState({
+      sliderDesign: val
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+  handleSliderChangeDevelopment = (val) => {
+    this.setState({
+      sliderDev: val
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+  handleSliderChangeTesting = (val) => {
+    this.setState({
+      sliderTest: val
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value,
-    });
-  };
-  submitForm = (event) => {
-    event.preventDefault();
-    // console.log(this.state)
-    db.collection("userprofile")
-      .add(this.state)
-      .then(this.setState({ redirect: true }))
-      .catch((error) => console.log(error));
-  };
+      [event.target.id]: event.target.value
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+  
   render() {
     return (
       <section className="background-4">
@@ -62,7 +81,9 @@ class AddProjects extends Component {
                   className="col-md-10"
                   style={{ border: "1px solid blue", marginBottom: "20vh" }}
                 >
-                  <form onSubmit={this.submitForm}>
+                  <form
+                    onSubmit={this.submitForm}
+                  >
                     <p
                       className="h5 text-center mb-4 font_bold"
                       style={{ color: "#222222", paddingTop: "8vh" }}
@@ -104,6 +125,8 @@ class AddProjects extends Component {
                           name="gender"
                           id="gender"
                           className="custom-dropdown"
+                          onChange={this.handleSelectChange}
+                          value={this.state.selectedValue}
                         >
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
@@ -123,6 +146,7 @@ class AddProjects extends Component {
                           id="age"
                           onChange={this.handleChange}
                           className="form-control"
+                          onChange={this.handleChange}
                           style={{
                             backgroundColor: "#FFFFFF",
                             border: "1px solid #222222",
@@ -148,6 +172,8 @@ class AddProjects extends Component {
                           id="jobtitle"
                           onChange={this.handleChange}
                           className="custom-dropdown"
+                          onChange={this.handleSelectChange}
+                          value={this.state.selectedValue}
                         >
                           <option value="UI/UX Designer">UI/UX Designer</option>
                           <option value="Web Designer">Web Designer</option>
@@ -168,6 +194,7 @@ class AddProjects extends Component {
                           id="location"
                           onChange={this.handleChange}
                           className="form-control"
+                          onChange={this.handleChange}
                           style={{
                             backgroundColor: "#FFFFFF",
                             border: "1px solid #222222",
@@ -302,6 +329,7 @@ class AddProjects extends Component {
                       </label>
                       <textarea
                         type="text"
+                        onChange={this.handleChange}
                         name="message"
                         id="message"
                         onChange={this.handleChange}
@@ -332,6 +360,7 @@ class AddProjects extends Component {
                           max={100}
                           value={0}
                           step={33.33}
+                          getValue={this.handleSliderChangeDesign}
                         />
                         <div className="my-5">
                           <label
@@ -347,6 +376,7 @@ class AddProjects extends Component {
                             max={100}
                             value={0}
                             step={33.33}
+                          getValue={this.handleSliderChangeDevelopment}
                           />
                         </div>
                         <div className="my-5">
@@ -363,6 +393,7 @@ class AddProjects extends Component {
                             max={100}
                             value={0}
                             step={33.33}
+                          getValue={this.handleSliderChangeTesting}
                           />
                         </div>
                       </div>
