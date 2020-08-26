@@ -18,16 +18,7 @@ class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ""
     };
-  }
-
-  handleSelectChange = (event) => {
-    this.setState({
-      [event.target.id]: event.target.value
-    }, ()=>{
-      console.log("state select", this.state)
-    })
   }
 
   handleSliderChangeDesign = (val) => {
@@ -60,6 +51,13 @@ class AddProjects extends Component {
     })
   }
   
+  submitForm = (event) => {
+    // event.preventDefault();
+    db.collection("userprofile")
+      .add(this.state)
+      .catch((error) => console.log(error));
+  };
+
   render() {
     return (
       <section className="background-4">
@@ -125,7 +123,7 @@ class AddProjects extends Component {
                           name="gender"
                           id="gender"
                           className="custom-dropdown"
-                          onChange={this.handleSelectChange}
+                          onChange={this.handleChange}
                           value={this.state.selectedValue}
                         >
                           <option value="Male">Male</option>
@@ -172,7 +170,7 @@ class AddProjects extends Component {
                           id="jobtitle"
                           onChange={this.handleChange}
                           className="custom-dropdown"
-                          onChange={this.handleSelectChange}
+                          onChange={this.handleChange}
                           value={this.state.selectedValue}
                         >
                           <option value="UI/UX Designer">UI/UX Designer</option>
