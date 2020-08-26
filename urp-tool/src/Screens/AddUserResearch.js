@@ -17,8 +17,49 @@ import AddUserResearchIllustration from "../Components/AddUserResearchIllustrati
 class AddProjects extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      value: ""
+    };
   }
+
+  handleSelectChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+
+  handleSliderChangeDesign = (val) => {
+    this.setState({
+      sliderDesign: val
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+  handleSliderChangeDevelopment = (val) => {
+    this.setState({
+      sliderDev: val
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+  handleSliderChangeTesting = (val) => {
+    this.setState({
+      sliderTest: val
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      [event.target.id]: event.target.value
+    }, ()=>{
+      console.log("state select", this.state)
+    })
+  }
+  
   render() {
     return (
       <section className="background-4">
@@ -42,8 +83,6 @@ class AddProjects extends Component {
                 >
                   <form
                     onSubmit={this.submitForm}
-                    action="https://formspree.io/mpzqowjw"
-                    method="POST"
                   >
                     <p
                       className="h5 text-center mb-4 font_bold"
@@ -62,6 +101,7 @@ class AddProjects extends Component {
                         </label>
                         <input
                           type="text"
+                          onChange={this.handleChange}
                           id="defaultFormName"
                           className="form-control"
                           style={{
@@ -85,6 +125,8 @@ class AddProjects extends Component {
                           name="gender"
                           id="gender"
                           className="custom-dropdown"
+                          onChange={this.handleSelectChange}
+                          value={this.state.selectedValue}
                         >
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
@@ -103,6 +145,7 @@ class AddProjects extends Component {
                           type="number"
                           id="defaultFormAGe"
                           className="form-control"
+                          onChange={this.handleChange}
                           style={{
                             backgroundColor: "#FFFFFF",
                             border: "1px solid #222222",
@@ -127,6 +170,8 @@ class AddProjects extends Component {
                           name="jobTitle"
                           id="jobTitle"
                           className="custom-dropdown"
+                          onChange={this.handleSelectChange}
+                          value={this.state.selectedValue}
                         >
                           <option value="UI/UX Designer">UI/UX Designer</option>
                           <option value="Web Designer">Web Designer</option>
@@ -146,6 +191,7 @@ class AddProjects extends Component {
                           type="text"
                           id="defaultFormLocation"
                           className="form-control"
+                          onChange={this.handleChange}
                           style={{
                             backgroundColor: "#FFFFFF",
                             border: "1px solid #222222",
@@ -181,6 +227,7 @@ class AddProjects extends Component {
                           type="text"
                           name="about"
                           id="defaultFormAbout"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -203,6 +250,7 @@ class AddProjects extends Component {
                         <textarea
                           type="text"
                           name="goals"
+                          onChange={this.handleChange}
                           id="defaultFormGoals"
                           className="form-control"
                           rows="3"
@@ -230,6 +278,7 @@ class AddProjects extends Component {
                           type="text"
                           name="needs"
                           id="defaultFormNeeds"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -253,6 +302,7 @@ class AddProjects extends Component {
                           type="text"
                           name="challenges"
                           id="defaultFormChallenges"
+                          onChange={this.handleChange}
                           className="form-control"
                           rows="3"
                           style={{
@@ -276,6 +326,7 @@ class AddProjects extends Component {
                       </label>
                       <textarea
                         type="text"
+                        onChange={this.handleChange}
                         name="message"
                         id="defaultFormMessage"
                         className="form-control"
@@ -305,6 +356,7 @@ class AddProjects extends Component {
                           max={100}
                           value={0}
                           step={33.33}
+                          getValue={this.handleSliderChangeDesign}
                         />
                         <div className="my-5">
                           <label
@@ -320,6 +372,7 @@ class AddProjects extends Component {
                             max={100}
                             value={0}
                             step={33.33}
+                          getValue={this.handleSliderChangeDevelopment}
                           />
                         </div>
                         <div className="my-5">
@@ -336,6 +389,7 @@ class AddProjects extends Component {
                             max={100}
                             value={0}
                             step={33.33}
+                          getValue={this.handleSliderChangeTesting}
                           />
                         </div>
                       </div>
