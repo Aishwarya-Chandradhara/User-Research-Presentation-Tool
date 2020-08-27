@@ -5,11 +5,13 @@ const AddUserResearchText = () => {
     <div className='col-md-12 text-center'>
       <div style={{ marginTop: "2vh" }}>
         <p style={{ color: "#222222" }}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-        Lorem ipsum dolor sit amet, consetetur 
-        sadipscing elitr, se est Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo d 
+        User research helps us understand how people do tasks and achieve targets 
+        that are important to them. It provides us with context and insight, and 
+        enables us to respond with useful, concise and efficient design solutions.
+        Helps us to recognise unarticulated needs and fill in any gaps in our user
+        awareness, implementation background, challenges.
+        <br/>
+        You can add user research findings here. 
         </p>
       </div>
     </div>

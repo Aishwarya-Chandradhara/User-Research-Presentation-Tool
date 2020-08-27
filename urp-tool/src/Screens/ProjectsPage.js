@@ -15,7 +15,6 @@ class ProjectsPage extends Component {
     }
   }
   componentDidMount() {
-    console.log("mounted");
     db.collection("projects")
       .get()
       .then((snapshot) => {
@@ -30,7 +29,8 @@ class ProjectsPage extends Component {
   }
   render() {
     return (
-      <section className='col-md-12 background-4'>
+      <section>
+      <div className="col-md-12 background-4">
         <MDBTypography
           tag='h3'
           variant='h3-responsive'
@@ -39,8 +39,8 @@ class ProjectsPage extends Component {
         >
           Projects
         </MDBTypography>
-        <div>
           <ProjectsPageText />
+        
           {this.state.loaded
           ? <ProjectsCard projects={this.state.projects} />
           : <Spinner />}
@@ -67,8 +67,8 @@ class ProjectsPage extends Component {
                   Back to Home
             </MDBNavLink>
       </button>
-          <NewFooter />
-        </div>
+      </div>
+      <NewFooter />
       </section>
     );
   }

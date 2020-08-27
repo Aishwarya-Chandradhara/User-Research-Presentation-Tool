@@ -35,8 +35,7 @@ export default class ProjectsCard extends Component {
                   <MDBNavLink
                       style={{color: "#FFFFFF"}}
                       exact
-                      to='/userresearch/'
-                      // to={'/userresearch/'+[item.title]}
+                      to={'/userresearch/'+[item.title]}
                     >
                     <MDBBtn color="blue" href="#">User Research
                       <MDBIcon icon='angle-right' className='ml-2' /> 

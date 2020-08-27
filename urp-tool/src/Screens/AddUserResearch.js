@@ -12,51 +12,66 @@ import FileUpload from "../Components/FileUpload";
 import AddUserResearchText from "../Components/AddUserResearchText";
 import NewFooter from "../Components/NewFooter";
 import AddUserResearchIllustration from "../Components/AddUserResearchIllustration";
-import {db } from "../firebase"
+import {db} from "../firebase"
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      val : ["test", "test2"]
+      skills : []
     };
   }
-
+  componentDidMount() { 
+    db.collection("projects")
+      .get()
+      .then((snapshot) => {
+        var pro = [];
+        snapshot.forEach((doc) => {
+          let data = doc.data();
+          pro.push(data.title);
+        });
+        this.setState({ projects: pro, loaded: true });
+      })
+      .catch((error) => console.log(error));
+  }
   handleSliderChangeDesign = (val) => {
     this.setState({
       sliderDesign: val
-    }, ()=>{
-      console.log("state select", this.state)
     })
   }
   handleSliderChangeDevelopment = (val) => {
     this.setState({
       sliderDev: val
-    }, ()=>{
-      console.log("state select", this.state)
     })
   }
   handleSliderChangeTesting = (val) => {
     this.setState({
       sliderTest: val
-    }, ()=>{
-      console.log("state select", this.state)
     })
   }
 
   handleChange = (event) => {
     this.setState({
       [event.target.id]: event.target.value
-    }, ()=>{
-      console.log("state select", this.state)
     })
   }
-  
+  handleCheckBox = (event) =>{
+    let skill = event.target.id;
+    let arr = this.state.skills;
+    if(!arr.includes(event.target.id)){
+      arr.push(event.target.id);
+    }
+    else{
+      arr = arr.filter(item => item !== skill)
+    }
+    this.setState({skills: arr})
+  }
   submitForm = (event) => {
-    // event.preventDefault();
-    db.collection("userprofile")
-      .add(this.state)
-      .catch((error) => alert(error));
+    event.preventDefault();
+    // db.collection("userprofile")
+    //   .add(this.state)
+    //   .catch((error) => alert(error));
+    console.log(this.state)
   };
 
   render() {
@@ -123,10 +138,12 @@ class AddProjects extends Component {
                         <select
                           name="gender"
                           id="gender"
+                          required
                           className="custom-dropdown"
                           onChange={this.handleChange}
                           value={this.state.selectedValue}
                         >
+                          <option value="" selected disabled hidden>Select a value</option>
                           <option value="Male">Male</option>
                           <option value="Female">Female</option>
                           <option value="Others">Others</option>
@@ -169,11 +186,13 @@ class AddProjects extends Component {
                         <select
                           name="jobtitle"
                           id="jobtitle"
+                          required
                           onChange={this.handleChange}
                           className="custom-dropdown"
                           onChange={this.handleChange}
                           value={this.state.selectedValue}
                         >
+                          <option value="" selected disabled hidden>Select a value</option>
                           <option value="UI/UX Designer">UI/UX Designer</option>
                           <option value="Web Designer">Web Designer</option>
                           <option value="Developer">Developer</option>
@@ -343,8 +362,40 @@ class AddProjects extends Component {
                       />
                     </div>
                     <br />
+                    <div className="col-md-4">
+                        <label
+                          htmlFor="jobtitle"
+                          style={{ color: "#222222" }}
+                          className="font_medium"
+                        >
+                          Projects
+                        </label>
+                        <br />
+                        <select
+                          name="jobtitle"
+                          id="jobtitle"
+                          onChange={this.handleChange}
+                          className="custom-dropdown"
+                          onChange={this.handleChange}
+                          value={this.state.selectedValue}
+                        >
+                          <option value="" selected disabled hidden>Select a value</option>
+                          {this.state.loaded
+                          ? this.state.projects.map((project) => {
+                          return (
+                            (
+                              <option value={project}>
+                                {project}
+                              </option>
+                            )
+                          );
+                        })
+                          : null}
+                        </select>
+                      </div>
+                      <br />
                     <div className="row col-md-12">
-                      <div className="col-md-6">
+                      <div className="col-md-4">
                         <h6>Skills</h6>
                         <label
                           htmlFor="design"
@@ -396,223 +447,243 @@ class AddProjects extends Component {
                           />
                         </div>
                       </div>
-                      <h6>Personality</h6>
-                      <div className="col-md-6">
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Enthusiastic"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Enthusiastic"
-                          >
-                            Enthusiastic
-                          </label>
+                      <div className="row col-md-8" >
+                        <h6>Personality</h6>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Enthusiastic"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Enthusiastic"
+                            >
+                              Enthusiastic
+                            </label>
                           </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Getter"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Getter"
-                          >
-                            Go Getter
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="defaultChecked2"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="defaultChecked2"
-                          >
-                            Go Getter
-                          </label>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Go Getter"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Go Getter"
+                            >
+                              Go Getter
+                            </label>
                           </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Sociable"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Sociable"
-                          >
-                            Sociable
-                          </label>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Affable"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Affable"
+                            >
+                              Affable
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Sociable"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Sociable"
+                            >
+                              Sociable
+                            </label>
+                          </div>
                         </div>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Maverick"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Maverick"
+                            >
+                              Maverick
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%"}}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Elevated"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Elevated"
+                            >
+                              Elevated
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Friendly"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Friendly"
+                            >
+                              Friendly
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex:" 1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Thoughtful"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Thoughtful"
+                            >
+                              Thoughtful
+                            </label>
+                          </div>
                         </div>
-                        <div class="custom-control custom-checkbox">
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                          <div class="custom-control custom-checkbox" style={{flex:" 1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="TeamPlayer"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="TeamPlayer"
+                            >
+                              Team Player
+                            </label>
+                          </div>
+                          <div class=" custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Attentive"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Attentive"
+                            >
+                              Attentive
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Organized"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Organized"
+                            >
+                              Organized
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Passionate"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Passionate"
+                            >
+                              Passionate
+                            </label>
+                          </div>
+                        </div>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Dependable"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Dependable"
+                            >
+                              Dependable
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Motivated"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Motivated"
+                            >
+                              Motivated
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Creative"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Creative"
+                            >
+                              Creative
+                            </label>
+                          </div>
+                          <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
+                            <input
+                              type="checkbox"
+                              class="custom-control-input"
+                              id="Proactive"
+                              onChange={this.handleCheckBox}
+                            />
+                            <label
+                              class="custom-control-label custom-skill"
+                              for="Proactive"
+                            >
+                              Proactive
+                            </label>
+                          </div>
+                        </div>
                         <br />
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="TeamPlayer"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="TeamPlayer"
-                          >
-                            Team Player
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Attentive"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Attentive"
-                          >
-                            Attentive
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Organized"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Organized"
-                          >
-                            Organized
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Passionate"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Passionate"
-                          >
-                            Passionate
-                          </label>
-                        </div>
-                        <br />
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Dependable"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Dependable"
-                          >
-                            Dependable
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Motivated"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Motivated"
-                          >
-                            Motivated
-                          </label>
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Creative"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Creative"
-                          >
-                            Creative
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Proactive"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Proactive"
-                          >
-                            Proactive
-                          </label>
-                        </div>
-                        <br />
-                        </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Maverick"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Maverick"
-                          >
-                            Maverick
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Elevated"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Elevated"
-                          >
-                            Elevated
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Friendly"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Friendly"
-                          >
-                            Friendly
-                          </label>
-                          </div>
-                        <div class="custom-control custom-checkbox">
-                          <input
-                            type="checkbox"
-                            class="custom-control-input"
-                            id="Thoughtful"
-                          />
-                          <label
-                            class="custom-control-label custom-skill"
-                            for="Thoughtful"
-                          >
-                            Thoughtful
-                          </label>
-                        </div>
+                      </div>    
+                    </div>
                     <div
                       className="row col-md-6"
                       style={{

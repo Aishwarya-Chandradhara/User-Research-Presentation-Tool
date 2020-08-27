@@ -20,7 +20,7 @@ function App() {
         <Route path='/login' component={LoginPage} />
         <Route path='/signup' component={Signup} />
         <Route path='/forgotpassword' component={ForgotPassword} />
-        <Route path='/userresearch' component={UserResearchPage} />
+        <Route path='/userresearch/:name' component={UserResearchPage} />
         <Route path='/adminpage' component={AdminPage} />
         <Route path='/addprojects' component={AddProjects} />
         <Route path='/adduserresearch' component={AddUserResearch} />
