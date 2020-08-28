@@ -63,7 +63,7 @@ class ProjectsPage extends Component {
               }}
               exact
               to='/'
-            > <MDBIcon icon='angle-left' className='ml-2' />
+            > <MDBIcon icon='angle-left' className='mr-2' />
                   Back to Home
             </MDBNavLink>
       </button>

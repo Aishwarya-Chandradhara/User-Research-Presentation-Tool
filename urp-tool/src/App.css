@@ -11,8 +11,13 @@
   margin-top: 80px;
   color: #0066ff;
 }
+
+.parent-cards {
+  margin: auto 10%;
+}
+
 .project_card {
-  width: 25rem;
+  width: 20rem;
   margin: 0 auto;
   margin-bottom: 20px;
   border: 2px solid #0066ff !important;
@@ -58,6 +63,7 @@
 
 .footer-color {
   background-color: #0066ff !important;
+  margin-top: 20px;
 }
 /* enable absolute positioning */
 .inner-addon {
@@ -93,8 +99,16 @@
   padding-right: 30px;
 }
 
+.btn-project{
+  background-color: #0066ff !important;
+  color: white;
+  border-radius: 4px;
+  margin: 0 !important;
+  border-color: #0066FF; 
+}
+
 .primary-button {
-  background-color: #0066ff;
+  background-color: #0066ff !important;
   border-color: #0066ff;
   border-radius: 4px;
   width: 100%;
@@ -111,6 +125,7 @@
   margin: 4px;
   border: solid black;
 }
+
 .btn-primary {
   background-color: #ffffff;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {MDBContainer,MDBModal,MDBModalBody,} from "mdbreact";
+import { MDBContainer, MDBModal, MDBModalBody } from "mdbreact";
 
 class ModalPage extends Component {
   state = {
@@ -28,11 +28,11 @@ class ModalPage extends Component {
                 aria-hidden="true"
                 style={{ color: "white", type: "OpenSans" }}
               >
-                x
+                <i class="fa fa-times"></i>
               </span>
             </button>
             <div style={{ color: "white", textAlign: "center" }}>
-            You will receive an email with a link to reset your password. {" "}
+              You will receive an email with a link to reset your password.{" "}
             </div>
           </MDBModalBody>
         </MDBModal>

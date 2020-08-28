@@ -31,8 +31,9 @@ class ModalPage extends Component {
                 <i class="fa fa-times"></i>
               </span>
             </button>
+            <div style={{ color: "white", textAlign: "center" }}>Thank you</div>
             <div style={{ color: "white", textAlign: "center" }}>
-              You have successfully registered.
+              We will contact you soon, have a nice day!
             </div>
           </MDBModalBody>
         </MDBModal>

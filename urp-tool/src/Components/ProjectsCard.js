@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBCol, MDBIcon, MDBRow,MDBNavLink } from 'mdbreact';
-import '../App.css'
-
+import '../App.css';
+import BackgroundImage from "../Assets/ProjectsPageBackground.png"
 
 export default class ProjectsCard extends Component {
   constructor(props) {
@@ -13,7 +13,11 @@ export default class ProjectsCard extends Component {
   render() {
 
     return (
-      <MDBRow className="background-class">
+     
+      <MDBRow style={{margin: "auto 10%"}}>
+       <div className="background-class">
+        <img src={BackgroundImage} style={{    position: "absolute", left: "0", width: "auto"}}/>
+       </div>
         {this.props.projects && this.props.projects.map((item) => {
           { console.log("item", item) }
           return (
@@ -37,16 +41,16 @@ export default class ProjectsCard extends Component {
                       exact
                       to={'/userresearch/'+[item.title]}
                     >
-                    <MDBBtn color="blue" href="#">User Research
-                      <MDBIcon icon='angle-right' className='ml-2' /> 
-                    </MDBBtn>
+                    <button className="btn-project">User Research
+                    <i class="fas fa-angle-right ml-2"></i>
+                    </button>
                   </MDBNavLink>
                 </MDBCardBody>
               </MDBCard>
             </MDBCol>
           );
         })}
-      </MDBRow>
+              </MDBRow>
     )
   }
 }

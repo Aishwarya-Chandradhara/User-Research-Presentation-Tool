@@ -43,7 +43,7 @@ class UserResearchPage extends Component {
               exact
               to="/projects" >
               {" "}
-              <MDBIcon icon="angle-left" className="ml-2" />
+              <MDBIcon icon="angle-left" className="mr-2" />
               Back to Projects
             </MDBNavLink>
           </button>

@@ -175,9 +175,9 @@ class AddProjects extends Component {
                 color: "#FFFFFF",
               }}
               exact
-              to="/" >
+              to="/adminpage" >
               {" "}
-              <MDBIcon icon="angle-left" className="ml-2" />
+              <MDBIcon icon="angle-left" className="mr-2" />
               Back to Home
             </MDBNavLink>
           </button>
