@@ -16,7 +16,7 @@ export default class ProjectsCard extends Component {
      
       <MDBRow style={{margin: "auto 10%"}}>
        <div className="background-class">
-        <img src={BackgroundImage} style={{    position: "absolute", left: "0", width: "auto"}}/>
+        {/* <img src={BackgroundImage} style={{    position: "absolute", left: "0", width: "auto"}}/> */}
        </div>
         {this.props.projects && this.props.projects.map((item) => {
           { console.log("item", item) }

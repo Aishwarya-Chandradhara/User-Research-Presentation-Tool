@@ -4,34 +4,33 @@ import {
   MDBContainer,
   MDBRow,
   MDBCol,
-
   MDBNavLink,
-  MDBIcon
+  MDBIcon,
 } from "mdbreact";
 import AddProjectsText from "../Components/AddProjectsText";
 import NewFooter from "../Components/NewFooter";
 import AddProjectsIllustration from "../Components/AddProjectsIllustration";
 import FileUpload from "../Components/FileUpload";
-import {db} from "../firebase"
-
+import { db } from "../firebase";
+import formillustration from "../Assets/FormIllustration.png";
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
-    this.state = { desc: null , title: null};
+    this.state = { desc: null, title: null };
   }
   handleChange = (event) => {
     this.setState({
-      [event.target.id]: event.target.value
-    })
-  }
+      [event.target.id]: event.target.value,
+    });
+  };
   submitForm = (event) => {
     event.preventDefault();
     db.collection("projects")
-    .add(this.state)
-    .then(this.setState({redirect: true}))
-    .catch((error) => console.log(error));
-  }
+      .add(this.state)
+      .then(this.setState({ redirect: true }))
+      .catch((error) => console.log(error));
+  };
   render() {
     return (
       <section className="background-4">
@@ -43,20 +42,16 @@ class AddProjects extends Component {
         >
           Add New Projects
         </MDBTypography>
-        <div>
+        <div className="col-md-12 project-main">
           <AddProjectsText />
-          <div className="col-md-6">
-            <MDBContainer>
+          <div className="col-md-12" style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
+            <MDBCol className="col-md-6">
               <MDBRow className="center-align">
                 <MDBCol
                   md="10"
-                  className="center-align"
-                  style={{ marginTop: "20vh", border: "1px solid blue",  paddingTop: "8vh", marginBottom: "20vh"}}
+                  className="center-align add-project-card"
                 >
-                  <form
-                    onSubmit={this.submitForm}
-
-                  >
+                  <form onSubmit={this.submitForm}>
                     {/* <AddProjectsIllustration /> */}
                     <p
                       className="h5 text-center mb-4 font_bold"
@@ -124,63 +119,81 @@ class AddProjects extends Component {
                         marginBottom: "5vh",
                       }}
                     >
-                    <button
-                      type="submit"
-                      style={{
-                        color: "#FFFFFF",
-                        width: "40%",
-                        backgroundColor: "#0066FF",
-                        padding: "4px",
-                        borderRadius: "15px",
-                        border: "none",
-                      }}
-                    >
-                      <p>Submit</p>
-                    </button>
                     
-                    <MDBNavLink to="/">
                       <button
-                      type="button"
-                      style={{
-                        color: "#000000",
-                        backgroundColor: "#FFFFFF",
-                        padding: "4px",
-                        borderRadius: "15px",
-                        border: "2px solid #000000",
-                        width: "100%"
-                      }}>
-                      Cancel
-                    </button>
-                    </MDBNavLink>
+                        type="cancel"
+                        style={{
+                          width: "40%",
+                          backgroundColor: "#E2E6E7",
+                          padding: "4px",
+                          borderRadius: "15px",
+                          border: "black",
+                        }}
+                      >
+                        <MDBNavLink
+                          style={{
+                            color: "#000",
+                            borderRadius: "15px",
+                          }}
+                          exact
+                          to="/adminpage"
+                        >
+                          Cancel
+                        </MDBNavLink>
+                      </button>
+
+                      <button
+                        type="submit"
+                        style={{
+                          color: "#FFFFFF",
+                          width: "40%",
+                          backgroundColor: "#0066FF",
+                          padding: "4px",
+                          borderRadius: "15px",
+                          border: "none",
+                        }}
+                      >
+                        <MDBNavLink
+                          style={{
+                            color: "#FFFFFF",
+                            border: "1px", 
+                            borderRadius: "15px",
+                          }}
+                          exact
+                          to="/adduserresearch"
+                        >
+                          Submit
+                        </MDBNavLink>
+                      </button>
                     </div>
                   </form>
                 </MDBCol>
               </MDBRow>
-            </MDBContainer>
+            </MDBCol>
           </div>
-        </div>
-        <button
-            type="button"
+          <button
+          type="button"
+          style={{
+            color: "#FFFFFF",
+            backgroundColor: "#0066FF",
+            marginLeft: "10vw",
+            padding: "8px",
+            borderRadius: "25px",
+            border: "none",
+          }}
+        >
+          <MDBNavLink
             style={{
               color: "#FFFFFF",
-              backgroundColor: "#0066FF",
-              marginLeft: "10vw",
-              padding: "8px",
-              borderRadius: "25px",
-              border: "none",
             }}
+            exact
+            to="/adminpage"
           >
-            <MDBNavLink
-              style={{
-                color: "#FFFFFF",
-              }}
-              exact
-              to="/adminpage" >
-              {" "}
-              <MDBIcon icon="angle-left" className="mr-2" />
-              Back to Home
-            </MDBNavLink>
-          </button>
+            <MDBIcon icon="angle-left" className="mr-2" />
+            Back to Home
+          </MDBNavLink>
+        </button>
+        </div>
         <NewFooter />
       </section>
     );

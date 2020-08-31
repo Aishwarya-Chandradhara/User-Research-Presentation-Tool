@@ -68,9 +68,9 @@ class AddProjects extends Component {
   }
   submitForm = (event) => {
     event.preventDefault();
-    // db.collection("userprofile")
-    //   .add(this.state)
-    //   .catch((error) => alert(error));
+    db.collection("userprofile")
+    .add(this.state)
+    .catch((error) => alert(error));
     console.log(this.state)
   };
 
@@ -745,7 +745,7 @@ class AddProjects extends Component {
             to="/addprojects"
           >
             {" "}
-            <MDBIcon icon="angle-left" className="ml-2" />
+            <MDBIcon icon="angle-left" className="mr-2" />
             Back to Add Projects
           </MDBNavLink>
         </button>
