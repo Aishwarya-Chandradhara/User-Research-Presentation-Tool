@@ -25,57 +25,50 @@ const ProjectsAdminText = () => {
         </p>
       </div>
 
-        <div
-        style={{
-        display: "flex",
-        justifyContent: "space-between",
-        marginTop: "5vh",
-        marginBottom: "5vh",
-        }}
-        >
-      <button
-        type="button"
-        style={{
-          color: "#FFFFFF",
-          backgroundColor: "#0066FF",
-          marginLeft: "10vw",
-          padding: "8px",
-          borderRadius: "25px",
-          border: "none",
-        }}
-      >
-        <MDBNavLink
+      <div>
+        <button
+          type="button"
           style={{
             color: "#FFFFFF",
+            backgroundColor: "#0066FF",
+            marginLeft: "10vw",
+            padding: "8px",
+            borderRadius: "25px",
+            border: "none",
           }}
-          exact
-          to="/projects"
         >
-          Checkout our Projects
-        </MDBNavLink>
-      </button>
+          <MDBNavLink
+            style={{
+              color: "#FFFFFF",
+            }}
+            exact
+            to="/projects"
+          >
+            Checkout our Projects
+          </MDBNavLink>
+        </button>
 
-      <button
-        type="button"
-        style={{
-          color: "#FFFFFF",
-          backgroundColor: "#0066FF",
-          marginLeft: "30vw",
-          padding: "8px",
-          borderRadius: "25px",
-          border: "none",
-        }}
-      >
-        <MDBNavLink
+        <button
+          type="button"
           style={{
             color: "#FFFFFF",
+            backgroundColor: "#0066FF",
+            marginLeft: "30vw",
+            padding: "8px",
+            borderRadius: "25px",
+            border: "none",
           }}
-          exact
-          to="/addprojects"
         >
-          Add more Projects
-        </MDBNavLink>
-      </button>
+          <MDBNavLink
+            style={{
+              color: "#FFFFFF",
+            }}
+            exact
+            to="/addprojects"
+          >
+            Add more Projects
+          </MDBNavLink>
+        </button>
       </div>
     </div>
   );

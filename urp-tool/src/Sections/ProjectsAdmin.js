@@ -18,11 +18,8 @@ class ProjectsAdmin extends Component {
             id='projectsadmin'
           >
             <ProjectsAdminText />
-
-            </section>
-
             <ProjectsIllustration />
-
+            </section>
         </MDBContainer>
       </div>
     );

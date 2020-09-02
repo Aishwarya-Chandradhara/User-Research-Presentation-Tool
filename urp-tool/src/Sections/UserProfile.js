@@ -7,9 +7,13 @@ class UserProfile extends Component {
     super(props);
     this.state = {};
   }
+  componentDidMount (){
+    console.log(this.props.researches)
+  }
   render() {
     return (
       <div>
+      {this.props.researches.map((research) => { return (<div>
         <MDBContainer
           fluid
           className="no-padding"
@@ -49,9 +53,7 @@ class UserProfile extends Component {
               <div className="col-md-12 text-center">
                 <div style={{ marginTop: "2vh" }}>
                   <p style={{ color: "#FFFFFF" }}>
-                    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                    sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                    magna aliquyam erat"
+                    {research.message}
                   </p>
                 </div>
               </div>
@@ -60,19 +62,19 @@ class UserProfile extends Component {
                   <div style={{ marginTop: "2vh", color: "white" }}>
                     <p className="user-info text-left">
                       <span>Age</span>
-                      <span>24</span>
+                      <span>{research.age}</span>
                     </p>
                     <p className="user-info text-left">
                       <span>Job Title</span>
-                      <span>Web Designer</span>
+                      <span>{research.jobtitle}</span>
                     </p>
                     <p className="user-info text-left">
                       <span>Gender</span>
-                      <span>Female</span>
+                      <span>{research.gender}</span>
                     </p>
                     <p className="user-info text-left">
                       <span>Location</span>
-                      <span>Heidelberg, Germany</span>
+                      <span>{research.location}</span>
                     </p>
                   </div>
                 </div>
@@ -124,7 +126,7 @@ class UserProfile extends Component {
               <div className="col-md-12">
                 <div>
                   <h1 style={{ color: "#222222" }} class="h1-responsive ">
-                    Alicia Schneider
+                    {research.name}
                   </h1>
                 </div>
                 <div style={{ paddingTop: "50px" }}>
@@ -134,13 +136,7 @@ class UserProfile extends Component {
                 </div>
                 <div style={{ paddingTop: "10px" }}>
                   <p style={{ color: "#222222", text: "justify" }}>
-                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                    justo duo dolores et ea rebum. Stet clita kasd gubergren, no
-                    sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-                    ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-                    nonumy eirmod tempor invidunt ut labore e
+                   {research.about}
                   </p>
                 </div>
               </div>
@@ -157,9 +153,7 @@ class UserProfile extends Component {
                     </div>
                     <div>
                       <p style={{ color: "#222222", text: "justify" }}>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam erat, sed diam voluptua.
+                        {research.goals}
                       </p>
                     </div>
                   </div>
@@ -174,9 +168,7 @@ class UserProfile extends Component {
                     </div>
                     <div>
                       <p style={{ color: "#222222", text: "justify" }}>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam erat, sed diam voluptua.
+                      {research.needs}
                       </p>
                     </div>
                   </div>
@@ -196,9 +188,7 @@ class UserProfile extends Component {
                     </div>
                     <div>
                       <p style={{ color: "#222222", text: "justify" }}>
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
-                        sed diam nonumy eirmod tempor invidunt ut labore et
-                        dolore magna aliquyam erat, sed diam voluptua.
+                        {research.challenges}
                       </p>
                     </div>
                   </div>
@@ -214,7 +204,7 @@ class UserProfile extends Component {
                       <MDBProgress
                         classname=""
                         material
-                        value={70}
+                        value={research.sliderDesign}
                         height="20px"
                         wrapperStyle={{
                           width: "200px",
@@ -225,7 +215,7 @@ class UserProfile extends Component {
                       <MDBProgress
                         classname=""
                         material
-                        value={60}
+                        value={research.sliderDev}
                         height="20px"
                         wrapperStyle={{ width: "200px" }}
                       />
@@ -233,7 +223,7 @@ class UserProfile extends Component {
                       <MDBProgress
                         classname=""
                         material
-                        value={50}
+                        value={research.sliderTest}
                         height="20px"
                         wrapperStyle={{ width: "200px" }}
                       />
@@ -244,7 +234,9 @@ class UserProfile extends Component {
             </div>
           </section>
         </MDBContainer>
+      </div>)})}
       </div>
+      
     );
   }
 }

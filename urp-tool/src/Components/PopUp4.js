@@ -32,7 +32,7 @@ class ModalPage extends Component {
               </span>
             </button>
             <div style={{ color: "white", textAlign: "center" }}>
-              Added New User Research
+              Added User Research
             </div>
           </MDBModalBody>
         </MDBModal>

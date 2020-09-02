@@ -3,11 +3,25 @@ import UserResearchPageText from "../Components/UserResearchPageText";
 import NewFooter from "../Components/NewFooter";
 import { MDBTypography, MDBNavLink, MDBIcon } from "mdbreact";
 import UserProfile from "../Sections/UserProfile";
+import {db } from "../firebase"
 
 class UserResearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
+  }
+  componentDidMount (){
+    db.collection("userprofile")
+      .get()
+      .then((snapshot) => {
+        var pro = [];
+        snapshot.forEach((doc) => {
+          let data = doc.data();
+          pro.push(data);
+        });
+      this.setState({ researches: pro, loaded: true });
+      })
+      .catch((error) => console.log(error));
   }
   render() {
     return (
@@ -22,8 +36,9 @@ class UserResearchPage extends Component {
         </MDBTypography>
         {/* <h3>project : {this.props.match.params.name}</h3> */}
         <div className= "col-md-12 background1-class">
-          <UserResearchPageText />
-          <UserProfile />
+          <UserResearchPageText  />
+          {this.state.loaded ? <UserProfile researches={this.state.researches}/> : null}
+          
 
           <button
             type="button"
