@@ -11,7 +11,6 @@ import {
 import FileUpload from "../Components/FileUpload";
 import AddUserResearchText from "../Components/AddUserResearchText";
 import NewFooter from "../Components/NewFooter";
-import AddUserResearchIllustration from "../Components/AddUserResearchIllustration";
 import {db} from "../firebase"
 
 class AddProjects extends Component {
@@ -85,15 +84,16 @@ class AddProjects extends Component {
         >
           Add New User Researches
         </MDBTypography>
-        <div>
+        <div className= "col-md-12 adduserresearch-main">
           <AddUserResearchText />
           <div>
-            <AddUserResearchIllustration />
             <MDBContainer>
               <MDBRow className="center-align">
                 <MDBCol
                   className="col-md-10"
+                  className="center-align add-project-card"
                   style={{ border: "1px solid blue", marginBottom: "20vh" }}
+                  
                 >
                   <form
                     onSubmit={this.submitForm}
@@ -362,6 +362,7 @@ class AddProjects extends Component {
                       />
                     </div>
                     <br />
+                    <div className="col-md-6">
                     <div className="col-md-4">
                         <label
                           htmlFor="jobtitle"
@@ -392,6 +393,7 @@ class AddProjects extends Component {
                         })
                           : null}
                         </select>
+                        </div>
                       </div>
                       <br />
                     <div className="row col-md-12">

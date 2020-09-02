@@ -156,12 +156,12 @@
 
 .background-class {
   background-image: url("./Assets/ProjectsPageBackground.png");
-  background-size: contain;
+  background-size: cover;
 }
 
 .background1-class {
   background-image: url("./Assets/UserProfileBackground.png");
-  background-size: contain;
+  background-size: cover;
 }
 
 .add-project-card {
@@ -175,6 +175,11 @@
 
 .project-main {
   background: url("./Assets/Addprojectsillustration.png");
+  background-size: cover;
+}
+
+.adduserresearch-main{
+  background: url("./Assets/AddUserResearchBackground.png");
   background-size: cover;
 }
 

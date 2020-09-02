@@ -21,7 +21,7 @@ class UserResearchPage extends Component {
           User Research
         </MDBTypography>
         {/* <h3>project : {this.props.match.params.name}</h3> */}
-        <div>
+        <div className= "col-md-12 background1-class">
           <UserResearchPageText />
           <UserProfile />
 

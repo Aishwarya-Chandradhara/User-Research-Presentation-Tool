@@ -25,6 +25,14 @@ const ProjectsAdminText = () => {
         </p>
       </div>
 
+        <div
+        style={{
+        display: "flex",
+        justifyContent: "space-between",
+        marginTop: "5vh",
+        marginBottom: "5vh",
+        }}
+        >
       <button
         type="button"
         style={{
@@ -68,6 +76,7 @@ const ProjectsAdminText = () => {
           Add more Projects
         </MDBNavLink>
       </button>
+      </div>
     </div>
   );
 };

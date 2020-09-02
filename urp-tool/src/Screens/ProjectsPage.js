@@ -30,7 +30,7 @@ class ProjectsPage extends Component {
   render() {
     return (
       <section>
-      <div className="col-md-12 background-4">
+      <div>
         <MDBTypography
           tag='h3'
           variant='h3-responsive'
@@ -40,7 +40,7 @@ class ProjectsPage extends Component {
           Projects
         </MDBTypography>
           <ProjectsPageText />
-        
+          <div className="col-md-12 background-class">
           {this.state.loaded
           ? <ProjectsCard projects={this.state.projects} />
           : <Spinner />}
@@ -67,6 +67,7 @@ class ProjectsPage extends Component {
                   Back to Home
             </MDBNavLink>
       </button>
+      </div>
       </div>
       <NewFooter />
       </section>

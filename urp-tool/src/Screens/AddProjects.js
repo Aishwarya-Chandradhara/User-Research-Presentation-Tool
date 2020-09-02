@@ -9,7 +9,6 @@ import {
 } from "mdbreact";
 import AddProjectsText from "../Components/AddProjectsText";
 import NewFooter from "../Components/NewFooter";
-import AddProjectsIllustration from "../Components/AddProjectsIllustration";
 import FileUpload from "../Components/FileUpload";
 import { db } from "../firebase";
 import formillustration from "../Assets/FormIllustration.png";
@@ -52,7 +51,6 @@ class AddProjects extends Component {
                   className="center-align add-project-card"
                 >
                   <form onSubmit={this.submitForm}>
-                    {/* <AddProjectsIllustration /> */}
                     <p
                       className="h5 text-center mb-4 font_bold"
                       style={{ color: "#222222" }}
