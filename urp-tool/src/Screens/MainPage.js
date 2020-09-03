@@ -5,6 +5,7 @@ import Projects from "../Sections/Projects";
 import ContactUs from "../Sections/ContactUs";
 import Footer from "../Components/Footer";
 import Navbar from "../Components/Navbar"
+
 class MainPage extends Component {
   constructor(props) {
     super(props);

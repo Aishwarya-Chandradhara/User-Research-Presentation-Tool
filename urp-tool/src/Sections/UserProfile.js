@@ -8,12 +8,15 @@ class UserProfile extends Component {
     this.state = {};
   }
   componentDidMount (){
-    console.log(this.props.researches)
+    // console.log(this.props.researches)
   }
   render() {
     return (
       <div>
-      {this.props.researches.map((research) => { return (<div>
+      {this.props.researches.map((research) => { 
+        if (this.props.project === research.project)
+        {
+        return (<div>
         <MDBContainer
           fluid
           className="no-padding"
@@ -80,36 +83,15 @@ class UserProfile extends Component {
                 </div>
               </MDBContainer>
               <div className="badges-user">
+              {research.skills.map((val)=> {return(
                 <MDBBadge
                   color="white"
                   className="black-text"
-                  style={{ padding: "5px", width: "30%" }}
+                  style={{ padding: "5px", width: "auto", margin: "2px" }}
                 >
-                  Motivated
-                </MDBBadge>
-                <MDBBadge
-                  color="white"
-                  className="black-text"
-                  style={{ padding: "5px", width: "30%" }}
-                >
-                  Passionate
-                </MDBBadge>
-              </div>
-              <div className="badges-user">
-                <MDBBadge
-                  color="white"
-                  className="black-text"
-                  style={{ padding: "5px", width: "30%" }}
-                >
-                  Go Getter
-                </MDBBadge>
-                <MDBBadge
-                  color="white"
-                  className="black-text"
-                  style={{ padding: "5px", width: "30%" }}
-                >
-                  Energetic
-                </MDBBadge>
+                  {val}
+                </MDBBadge>)
+              })}
               </div>
             </div>
 
@@ -234,7 +216,7 @@ class UserProfile extends Component {
             </div>
           </section>
         </MDBContainer>
-      </div>)})}
+      </div>)}})}
       </div>
       
     );

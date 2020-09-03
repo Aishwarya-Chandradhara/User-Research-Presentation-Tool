@@ -66,7 +66,7 @@ class AddProjects extends Component {
     this.setState({skills: arr})
   }
   submitForm = (event) => {
-    event.preventDefault();
+    // event.preventDefault();
     db.collection("userprofile")
     .add(this.state)
     .catch((error) => alert(error));
@@ -90,8 +90,7 @@ class AddProjects extends Component {
             <MDBContainer>
               <MDBRow className="center-align">
                 <MDBCol
-                  className="col-md-10"
-                  className="center-align add-project-card"
+                  className="center-align add-project-card col-md-9"
                   style={{ border: "1px solid blue", marginBottom: "20vh" }}
                   
                 >
@@ -105,7 +104,7 @@ class AddProjects extends Component {
                       Add New User Research
                     </p>
                     <div className="row col-md-12">
-                      <div className="col-md-4">
+                      <div className="col-md-3">
                         <label
                           htmlFor="name"
                           style={{ color: "#222222" }}
@@ -126,7 +125,7 @@ class AddProjects extends Component {
                           required
                         />
                       </div>
-                      <div className="col-md-4">
+                      <div className="col-md-3">
                         <label
                           htmlFor="gender"
                           style={{ color: "#222222" }}
@@ -149,32 +148,8 @@ class AddProjects extends Component {
                           <option value="Others">Others</option>
                         </select>
                       </div>
-                      <div className="col-md-4">
-                        <label
-                          htmlFor="age"
-                          style={{ color: "#222222" }}
-                          className="font_medium"
-                        >
-                          Age
-                        </label>
-                        <input
-                          type="age"
-                          id="age"
-                          onChange={this.handleChange}
-                          className="form-control"
-                          onChange={this.handleChange}
-                          style={{
-                            backgroundColor: "#FFFFFF",
-                            border: "1px solid #222222",
-                            color: "black",
-                          }}
-                          required
-                        />
-                      </div>
-                    </div>
-                    <br />
-                    <div className="row col-md-12">
-                      <div className="col-md-4">
+                      <br/>
+                      <div className="col-md-3">
                         <label
                           htmlFor="jobtitle"
                           style={{ color: "#222222" }}
@@ -197,6 +172,63 @@ class AddProjects extends Component {
                           <option value="Web Designer">Web Designer</option>
                           <option value="Developer">Developer</option>
                         </select>
+                      </div>
+                      <div className="col-md-3">
+                        <label
+                          htmlFor="jobtitle"
+                          style={{ color: "#222222" }}
+                          className="font_medium"
+                        >
+                          Projects
+                        </label>
+                        <br />
+                        <select
+                          name="project"
+                          id="project"
+                          onChange={this.handleChange}
+                          className="custom-dropdown"
+                          onChange={this.handleChange}
+                          value={this.state.selectedValue}
+                        >
+                          <option value="" selected disabled hidden>Select a value</option>
+                          {this.state.loaded
+                          ? this.state.projects.map((project) => {
+                          return (
+                            (
+                              <option value={project}>
+                                {project}
+                              </option>
+                            )
+                          );
+                        })
+                          : null}
+                        </select>
+                        </div>
+                            
+                    </div>
+                    <br />
+                    <div className="row col-md-12">
+                    <div className="col-md-4">
+                        <label
+                          htmlFor="age"
+                          style={{ color: "#222222" }}
+                          className="font_medium"
+                        >
+                          Age
+                        </label>
+                        <input
+                          type="age"
+                          id="age"
+                          onChange={this.handleChange}
+                          className="form-control"
+                          onChange={this.handleChange}
+                          style={{
+                            backgroundColor: "#FFFFFF",
+                            border: "1px solid #222222",
+                            color: "black",
+                          }}
+                          required
+                        />
                       </div>
                       <br />
                       <div className="col-md-4">
@@ -362,42 +394,8 @@ class AddProjects extends Component {
                       />
                     </div>
                     <br />
-                    <div className="col-md-6">
-                    <div className="col-md-4">
-                        <label
-                          htmlFor="jobtitle"
-                          style={{ color: "#222222" }}
-                          className="font_medium"
-                        >
-                          Projects
-                        </label>
-                        <br />
-                        <select
-                          name="jobtitle"
-                          id="jobtitle"
-                          onChange={this.handleChange}
-                          className="custom-dropdown"
-                          onChange={this.handleChange}
-                          value={this.state.selectedValue}
-                        >
-                          <option value="" selected disabled hidden>Select a value</option>
-                          {this.state.loaded
-                          ? this.state.projects.map((project) => {
-                          return (
-                            (
-                              <option value={project}>
-                                {project}
-                              </option>
-                            )
-                          );
-                        })
-                          : null}
-                        </select>
-                        </div>
-                      </div>
-                      <br />
                     <div className="row col-md-12">
-                      <div className="col-md-4">
+                      <div className="col-md-5">
                         <h6>Skills</h6>
                         <label
                           htmlFor="design"
@@ -449,9 +447,9 @@ class AddProjects extends Component {
                           />
                         </div>
                       </div>
-                      <div className="row col-md-8" >
+                      <div className="row col-md-7" >
                         <h6>Personality</h6>
-                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px", paddingRight: "0px"}}>
                           <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
                             <input
                               type="checkbox"
@@ -509,7 +507,7 @@ class AddProjects extends Component {
                             </label>
                           </div>
                         </div>
-                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px", paddingRight: "0px"}}>
                           <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
                             <input
                               type="checkbox"
@@ -567,7 +565,7 @@ class AddProjects extends Component {
                             </label>
                           </div>
                         </div>
-                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px",  paddingRight: "0px"}}>
                           <div class="custom-control custom-checkbox" style={{flex:" 1 0 21%" }}>
                             <input
                               type="checkbox"
@@ -625,7 +623,7 @@ class AddProjects extends Component {
                             </label>
                           </div>
                         </div>
-                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px"}}>
+                        <div className="row col-md-12" style={{display: "flex", flexWrap: "wrap", marginBottom: "25px",  paddingRight: "0px"}}>
                           <div class="custom-control custom-checkbox" style={{flex: "1 0 21%" }}>
                             <input
                               type="checkbox"

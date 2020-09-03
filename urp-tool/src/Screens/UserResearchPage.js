@@ -34,11 +34,9 @@ class UserResearchPage extends Component {
         >
           User Research
         </MDBTypography>
-        {/* <h3>project : {this.props.match.params.name}</h3> */}
-        <div className= "col-md-12 background1-class">
+        <div className= "background1-class">
           <UserResearchPageText  />
-          {this.state.loaded ? <UserProfile researches={this.state.researches}/> : null}
-          
+          {this.state.loaded ? <UserProfile project={this.props.match.params.name} researches={this.state.researches}/> : null}
 
           <button
             type="button"
