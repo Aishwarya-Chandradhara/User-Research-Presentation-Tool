@@ -3,7 +3,7 @@ import UserResearchPageText from "../Components/UserResearchPageText";
 import NewFooter from "../Components/NewFooter";
 import { MDBTypography, MDBNavLink, MDBIcon } from "mdbreact";
 import UserProfile from "../Sections/UserProfile";
-import {db } from "../firebase"
+import {db } from "../firebase_"
 
 class UserResearchPage extends Component {
   constructor(props) {

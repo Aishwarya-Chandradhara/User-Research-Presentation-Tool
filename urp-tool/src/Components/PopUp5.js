@@ -32,7 +32,7 @@ class ModalPage extends Component {
               </span>
             </button>
             <div style={{ color: "white", textAlign: "center" }}>
-              The email address or password is incorrect. 
+              The information you entered is incomplete or incorrect. 
             </div>
           </MDBModalBody>
         </MDBModal>

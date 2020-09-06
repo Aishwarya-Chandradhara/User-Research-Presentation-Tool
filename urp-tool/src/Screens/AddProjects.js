@@ -10,24 +10,46 @@ import {
 import AddProjectsText from "../Components/AddProjectsText";
 import NewFooter from "../Components/NewFooter";
 import FileUpload from "../Components/FileUpload";
-import { db } from "../firebase";
-import formillustration from "../Assets/FormIllustration.png";
+import { db, storage } from "../firebase_";
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = { desc: null, title: null };
   }
+  componentWillUnmount (){
+    document.getElementById("myForm").reset();
+  }
   handleChange = (event) => {
     this.setState({
       [event.target.id]: event.target.value,
     });
   };
+  handleImage = (image) => {
+    const uploadTask = storage.ref(`projectImage/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      snapshot => {},
+      error => {
+        console.log(error)
+      },
+      () => {
+        storage
+        .ref("projectImage")
+        .child(image.name)
+        .getDownloadURL()
+        .then(url => {
+          this.setState({image: url})
+        })
+      }
+    )
+  }
   submitForm = (event) => {
     event.preventDefault();
+    console.log(this.state)
     db.collection("projects")
       .add(this.state)
-      .then(this.setState({ redirect: true }))
+      .then( setTimeout( () => {window.location.href = "/adduserresearch"} , 500))
       .catch((error) => console.log(error));
   };
   render() {
@@ -50,7 +72,7 @@ class AddProjects extends Component {
                   md="10"
                   className="center-align add-project-card"
                 >
-                  <form onSubmit={this.submitForm}>
+                  <form onSubmit={this.submitForm} id="myForm">
                     <p
                       className="h5 text-center mb-4 font_bold"
                       style={{ color: "#222222" }}
@@ -62,7 +84,7 @@ class AddProjects extends Component {
                       style={{ color: "#222222" }}
                       className="font_medium"
                     >
-                      Company Name
+                      Project Name
                     </label>
                     <input
                       type="text"
@@ -108,7 +130,7 @@ class AddProjects extends Component {
                       Upload Picture
                     </label>
 
-                    <FileUpload />
+                    <FileUpload handleImageInChild={this.handleImage} />
                     <div
                       style={{
                         display: "flex",
@@ -150,18 +172,7 @@ class AddProjects extends Component {
                           borderRadius: "15px",
                           border: "none",
                         }}
-                      >
-                        <MDBNavLink
-                          style={{
-                            color: "#FFFFFF",
-                            border: "1px", 
-                            borderRadius: "15px",
-                          }}
-                          exact
-                          to="/adduserresearch"
-                        >
-                          Submit
-                        </MDBNavLink>
+                      >Submit
                       </button>
                     </div>
                   </form>

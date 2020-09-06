@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdbreact";
-import Popup1 from "../Components/Popup1";
+import PopUp1 from "../Components/PopUp1";
 import SignupPageIllustration from "..//Components/SignupPageIllustration"
 import '../App.css'
 
@@ -11,7 +11,6 @@ class SignupPage extends Component {
       showPopup: false,
     };
   }
-
   closePopup = () => {
     this.setState({ showPopup: false });
   };
@@ -67,11 +66,11 @@ class SignupPage extends Component {
               </div>
             </form>
             {this.state.showPopup ? (
-              <Popup1 closePopup={this.closePopup} />
+              <PopUp1 closePopup={this.closePopup} />
             ) : null}
 
             <p className="forgot-password text-align right">
-               Already registered <a href="/login">log in?</a>
+               Already registered? <a href="/login">Login</a>
                 </p>
           </MDBCol>
           <SignupPageIllustration />

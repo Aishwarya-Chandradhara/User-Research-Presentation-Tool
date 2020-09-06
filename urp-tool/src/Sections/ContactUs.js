@@ -6,8 +6,10 @@ import ContactUsIllustration from "../Components/ContactUsIllustration";
 class ContactUs extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+    };
   }
+
   render() {
     return (
       <section 

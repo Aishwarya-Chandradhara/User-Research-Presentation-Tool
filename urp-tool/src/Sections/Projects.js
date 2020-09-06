@@ -19,7 +19,6 @@ class Projects extends Component {
             id='projects'
             className='row col-md-12 col-xs-12 responsive-height background-1 no-margin'
           >
-
             <ProjectsText />
             <ProjectsIllustration />
  

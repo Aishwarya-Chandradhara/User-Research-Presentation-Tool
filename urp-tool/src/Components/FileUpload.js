@@ -11,7 +11,7 @@ class FileUpload extends Component {
     this.setState({
       [event.target.id]: file,
     });
-
+    this.props.handleImageInChild(file[0])
   };
   render() {
     return (

@@ -4,7 +4,7 @@ import ProjectsPageText from "../Components/ProjectsPageText";
 import NewFooter from "../Components/NewFooter";
 import ProjectsCard from "../Components/ProjectsCard";
 import Spinner from "../Components/Spinner";
-import { db } from "../firebase";
+import { db } from "../firebase_";
 import homeicon from "../Assets/Home.png";
 // import { browserHistory } from "react-router";
 

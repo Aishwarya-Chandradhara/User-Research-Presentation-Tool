@@ -1,13 +1,22 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBSmoothScroll } from "mdbreact";
+import PopUp3 from "../Components/PopUp3";
 
 class ContactUsForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showPopup: false,
       status: "",
     };
   }
+  closePopup = () => {
+    this.setState({ showPopup: false });
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({ showPopup: true });
+  };
 
   render() {
     const { status } = this.state;
@@ -16,7 +25,7 @@ class ContactUsForm extends Component {
         <MDBContainer>
           <MDBRow>
             <MDBCol md="10" style={{ marginTop: "20px" }}>
-              <form onSubmit={this.submitForm}>
+              <form onSubmit={this.handleSubmit}>
                 <p
                   className="h5 text-center mb-4 font_bold"
                   style={{ color: "#222222" }}
@@ -78,7 +87,7 @@ class ContactUsForm extends Component {
                   style={{
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #222222",
-                    color: "white",
+                    color: "#222222",
                   }}
                   required
                 />
@@ -99,27 +108,30 @@ class ContactUsForm extends Component {
                   style={{
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #222222",
-                    color: "white",
+                    color: "#222222",
                   }}
                   required
                 />
                 <br />
                 <button
-                  type="button"
+                  type="submit"
                   style={{
                     color: "#FFFFFF",
                     backgroundColor: "#0066FF",
                     marginLeft: "10vw",
-                    padding: "8px",
+                    padding: "10px",
                     borderRadius: "25px",
                     border: "none",
                   }}
                 >
-                  <MDBSmoothScroll to="contactus">
-                    Submit Message
-                  </MDBSmoothScroll>
+                  Submit Message
                 </button>
               </form>
+
+              {this.state.showPopup ? (
+                <PopUp3 closePopup={this.closePopup} />
+              ) : null}
+
             </MDBCol>
           </MDBRow>
         </MDBContainer>

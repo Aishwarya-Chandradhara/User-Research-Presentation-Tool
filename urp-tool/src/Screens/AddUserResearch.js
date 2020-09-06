@@ -9,17 +9,27 @@ import {
   MDBIcon,
 } from "mdbreact";
 import FileUpload from "../Components/FileUpload";
+import PopUp4 from "../Components/PopUp4";
 import AddUserResearchText from "../Components/AddUserResearchText";
 import NewFooter from "../Components/NewFooter";
-import {db} from "../firebase"
+import {db, storage} from "../firebase_"
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showPopup: false,
       skills : []
     };
   }
+  closePopup = () => {
+    this.setState({ showPopup: false });
+    window.location.reload()
+  };
+  handleSubmit = (event) => {
+    event.preventDefault();
+    this.setState({ showPopup: true });
+  };
   componentDidMount() { 
     db.collection("projects")
       .get()
@@ -43,6 +53,7 @@ class AddProjects extends Component {
       sliderDev: val
     })
   }
+  
   handleSliderChangeTesting = (val) => {
     this.setState({
       sliderTest: val
@@ -65,13 +76,34 @@ class AddProjects extends Component {
     }
     this.setState({skills: arr})
   }
+  handleImage = (image) => {
+    const uploadTask = storage.ref(`userImage/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      snapshot => {},
+      error => {
+        console.log(error)
+      },
+      () => {
+        storage
+        .ref("userImage")
+        .child(image.name)
+        .getDownloadURL()
+        .then(url => {
+          this.setState({image: url})
+        })
+      }
+    )
+  }
   submitForm = (event) => {
-    // event.preventDefault();
+    event.preventDefault();
     db.collection("userprofile")
     .add(this.state)
+    .then(this.setState({showPopup : true}))
     .catch((error) => alert(error));
     console.log(this.state)
   };
+
 
   render() {
     return (
@@ -94,8 +126,7 @@ class AddProjects extends Component {
                   style={{ border: "1px solid blue", marginBottom: "20vh" }}
                   
                 >
-                  <form
-                    onSubmit={this.submitForm}
+                  <form onSubmit={this.submitForm}
                   >
                     <p
                       className="h5 text-center mb-4 font_bold"
@@ -262,7 +293,7 @@ class AddProjects extends Component {
                         >
                           Upload Image
                         </label>
-                        <FileUpload />
+                        <FileUpload handleImageInChild={this.handleImage} />
                       </div>
                     </div>
                     <br />
@@ -721,6 +752,9 @@ class AddProjects extends Component {
                       </button>
                     </div>
                   </form>
+                  {this.state.showPopup ? (
+                <PopUp4 closePopup={this.closePopup} />
+              ) : null}
                 </MDBCol>
               </MDBRow>
             </MDBContainer>
