@@ -42,6 +42,7 @@ class UserProfile extends Component {
                   marginBottom: "10vh",
                 }}
               >
+              {console.log("image", research.image)}
                 <img
                   alt="Thesis"
                   style={{
@@ -50,7 +51,8 @@ class UserProfile extends Component {
                     display: "block",
                     margin: "auto",
                   }}
-                  src={require("../Assets/user1.png")}
+                  // src={require("../Assets/user1.png")}
+                  src={research.image}
                 />
               </div>
               <div className="col-md-12 text-center">

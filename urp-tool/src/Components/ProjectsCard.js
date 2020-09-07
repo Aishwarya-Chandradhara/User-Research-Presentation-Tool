@@ -50,7 +50,7 @@ export default class ProjectsCard extends Component {
             </MDBCol>
           );
         })}
-              </MDBRow>
+            </MDBRow>
     )
   }
 }

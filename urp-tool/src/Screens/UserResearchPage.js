@@ -24,6 +24,7 @@ class UserResearchPage extends Component {
       .catch((error) => console.log(error));
   }
   render() {
+    console.log("reseachstate", this.state.researches)
     return (
       <section>
         <MDBTypography
@@ -35,9 +36,9 @@ class UserResearchPage extends Component {
           User Research
         </MDBTypography>
         <div className= "background1-class">
+       
           <UserResearchPageText  />
           {this.state.loaded ? <UserProfile project={this.props.match.params.name} researches={this.state.researches}/> : null}
-
           <button
             type="button"
             style={{
