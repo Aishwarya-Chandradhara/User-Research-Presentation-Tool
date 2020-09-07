@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { auth } from "../firebase_";
+
 
 import {
   MDBNavbar,
@@ -21,6 +23,13 @@ class AdminNavbar extends Component {
     this.setState((prevState) => ({
       collapseID: prevState.collapseID !== collapseID ? collapseID : "",
     }));
+    logoutCall = () => {
+      auth.signOut().then(function() {
+        console.log("logged out")
+      }).catch(function(error) {
+        console.log(error)
+      });
+    }
 
   render() {
     return (
@@ -90,7 +99,7 @@ class AdminNavbar extends Component {
                   className="waves-effect waves-light"
                   to="#!"
                 >
-                  <MDBNavLink to="/login" style={{ color: "#FFFFFF" }}>
+                  <MDBNavLink to="#" style={{ color: "#FFFFFF" }} onClick={this.logoutCall}>
                     Logout
                   </MDBNavLink>
                 </MDBNavLink>

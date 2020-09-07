@@ -68,6 +68,15 @@ const ProjectsAdminText = () => {
           >
             Add more Projects
           </MDBNavLink>
+          {/* <MDBNavLink
+            style={{
+              color: "#FFFFFF",
+            }}
+            exact
+            to="/adduserresearch"
+          >
+            Add more user research
+          </MDBNavLink> */}
         </button>
       </div>
     </div>

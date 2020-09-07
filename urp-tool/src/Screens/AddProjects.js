@@ -10,15 +10,34 @@ import {
 import AddProjectsText from "../Components/AddProjectsText";
 import NewFooter from "../Components/NewFooter";
 import FileUpload from "../Components/FileUpload";
-import { db, storage } from "../firebase_";
+import { Redirect } from "react-router-dom";
+import { db, storage, auth } from "../firebase_";
 
 class AddProjects extends Component {
   constructor(props) {
     super(props);
     this.state = { desc: null, title: null };
   }
+  componentDidMount () {
+    this.isLoggedIn()
+   }
+ 
+   isLoggedIn = async () => {
+    await auth.onAuthStateChanged((user) => {
+         console.log("test", user)
+         if (user) {
+           //  console.log(user)
+         } else {
+           this.setState({redirect : true})
+         }
+     });
+   }
   componentWillUnmount (){
+    try {
     document.getElementById("myForm").reset();
+    } catch (error) {
+     console.log(error) 
+    }
   }
   handleChange = (event) => {
     this.setState({
@@ -54,6 +73,9 @@ class AddProjects extends Component {
   };
   
   render() {
+    if(this.state.redirect){
+      return <Redirect to="/login" />
+    }
     return (
       <section className="background-4">
         <MDBTypography

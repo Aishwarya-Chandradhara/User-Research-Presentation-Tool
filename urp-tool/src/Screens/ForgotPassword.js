@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol} from "mdbreact";
+import { Redirect } from "react-router-dom";
 import PopUp2 from "../Components/PopUp2";
 import ForgotPasswordIllustration from "../Components/ForgotPasswordIllustration"
 import '../App.css'
+import { auth } from "../firebase_";
 
 class ForgotPassword extends Component {
   constructor(props) {
@@ -13,16 +15,26 @@ class ForgotPassword extends Component {
   }
 
   closePopup = () => {
-    this.setState({ showPopup: false });
+    this.setState({ showPopup: false, redirect: true });
   };
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({ showPopup: true });
+    auth.sendPasswordResetEmail(this.state.email)
+    .then(() => {
+    this.setState({ showPopup: true })
+    }).catch((error) => {
+    this.setState({ errorMsg: error.message })
+    });
   };
+  handleChange = (event) => {
+    this.setState({[event.target.id] : event.target.value})
+  }
   render() {
+    if(this.state.redirect){
+      return <Redirect to="/login" />
+    }
     return (
-      
       <MDBContainer>
       <p className="h1 text-center mb-4 title">
                 User Research Presentation Tool
@@ -45,11 +57,14 @@ class ForgotPassword extends Component {
                     <i class="fa fa-envelope"></i>
               <input
                 type="email"
-                id="defaultFormLoginEmailEx"
+                id="email"
                 className="form-control"
+                onChange={this.handleChange}
+                required
               />
               </div>
               <br />
+              {this.state.errorMsg ? <p className="center-align red-text">{this.state.errorMsg}</p> : null}
               <div className="text-center mt-4">
                 <button
                    class="btn Ripple-parent primary-button"

@@ -12,7 +12,8 @@ import FileUpload from "../Components/FileUpload";
 import PopUp4 from "../Components/PopUp4";
 import AddUserResearchText from "../Components/AddUserResearchText";
 import NewFooter from "../Components/NewFooter";
-import {db, storage} from "../firebase_"
+import { Redirect } from "react-router-dom";
+import {db, auth, storage} from "../firebase_"
 
 class AddProjects extends Component {
   constructor(props) {
@@ -30,19 +31,32 @@ class AddProjects extends Component {
     event.preventDefault();
     this.setState({ showPopup: true });
   };
+
   componentDidMount() { 
-    db.collection("projects")
-      .get()
-      .then((snapshot) => {
-        var pro = [];
-        snapshot.forEach((doc) => {
-          let data = doc.data();
-          pro.push(data.title);
-        });
-        this.setState({ projects: pro, loaded: true });
-      })
-      .catch((error) => console.log(error));
+    this.isLoggedIn()
   }
+ 
+   isLoggedIn = async () => {
+    await auth.onAuthStateChanged((user) => {
+         console.log("test", user)
+         if (user) {
+           //  console.log(user)
+           db.collection("projects")
+          .get()
+          .then((snapshot) => {
+            var pro = [];
+            snapshot.forEach((doc) => {
+              let data = doc.data();
+              pro.push(data.title);
+            });
+            this.setState({ projects: pro, loaded: true });
+          })
+          .catch((error) => console.log(error));
+         } else {
+           this.setState({redirect : true})
+         }
+     });
+   }
   handleSliderChangeDesign = (val) => {
     this.setState({
       sliderDesign: val
@@ -106,6 +120,9 @@ class AddProjects extends Component {
 
 
   render() {
+    if(this.state.redirect){
+      return <Redirect to="/login" />
+    }
     return (
       <section className="background-4">
         <MDBTypography
