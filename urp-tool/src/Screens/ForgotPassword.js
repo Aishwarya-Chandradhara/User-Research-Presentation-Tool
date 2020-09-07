@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol} from "mdbreact";
-import Popup2 from "../Components/Popup2";
+import PopUp2 from "../Components/PopUp2";
 import ForgotPasswordIllustration from "../Components/ForgotPasswordIllustration"
 import '../App.css'
 
@@ -61,7 +61,7 @@ class ForgotPassword extends Component {
               </div>
             </form>
             {this.state.showPopup ? (
-              <Popup2 closePopup={this.closePopup} />
+              <PopUp2 closePopup={this.closePopup} />
             ) : null}
           </MDBCol>
           <ForgotPasswordIllustration />

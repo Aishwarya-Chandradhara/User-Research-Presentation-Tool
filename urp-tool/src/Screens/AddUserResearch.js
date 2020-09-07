@@ -248,7 +248,8 @@ class AddProjects extends Component {
                           Age
                         </label>
                         <input
-                          type="age"
+                          type="number"
+                          name="age"
                           id="age"
                           onChange={this.handleChange}
                           className="form-control"

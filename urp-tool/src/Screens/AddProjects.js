@@ -52,6 +52,7 @@ class AddProjects extends Component {
       .then( setTimeout( () => {window.location.href = "/adduserresearch"} , 500))
       .catch((error) => console.log(error));
   };
+  
   render() {
     return (
       <section className="background-4">

@@ -26,7 +26,7 @@ class FileUpload extends Component {
             id="uploadedFiles"
             aria-describedby="inputGroupFileAddon01"
             onChange={this.fileInputHandler}
-            accept=".jpeg"
+            accept=".jpeg,.png"
           />
           <label className="custom-file-label" htmlFor="uploadedFiles">
             Choose file
