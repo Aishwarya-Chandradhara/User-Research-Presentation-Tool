@@ -3,20 +3,37 @@ import { MDBContainer, MDBRow, MDBCol, MDBSmoothScroll } from "mdbreact";
 import PopUp3 from "../Components/PopUp3";
 
 class ContactUsForm extends Component {
+
   constructor(props) {
     super(props);
+    this.submitForm = this.submitForm.bind(this);
     this.state = {
-      showPopup: false,
       status: "",
+      showPopup: false,
     };
   }
+
   closePopup = () => {
     this.setState({ showPopup: false });
   };
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.setState({ showPopup: true });
-  };
+  submitForm(ev) {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader("Accept", "application/json");
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
+        this.setState({ status: "SUCCESS", showPopup: true });
+      } else {
+        this.setState({ status: "ERROR" });
+      }
+    };
+    xhr.send(data);
+  }
 
   render() {
     const { status } = this.state;
@@ -25,7 +42,7 @@ class ContactUsForm extends Component {
         <MDBContainer>
           <MDBRow>
             <MDBCol md="10" style={{ marginTop: "20px" }}>
-              <form onSubmit={this.handleSubmit}>
+              <form method="POST" action="https://formspree.io/xpzyvjrg" onSubmit={this.submitForm}>
                 <p
                   className="h5 text-center mb-4 font_bold"
                   style={{ color: "#222222" }}
@@ -46,7 +63,7 @@ class ContactUsForm extends Component {
                   style={{
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #222222",
-                    color: "white",
+                    color: "#222222",
                   }}
                   required
                 />
@@ -66,7 +83,7 @@ class ContactUsForm extends Component {
                   style={{
                     backgroundColor: "#FFFFFF",
                     border: "1px solid #222222",
-                    color: "white",
+                    color: "#222222",
                   }}
                   required
                 />

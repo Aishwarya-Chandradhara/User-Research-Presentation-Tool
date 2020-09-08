@@ -4,9 +4,10 @@ import ProjectsPageText from "../Components/ProjectsPageText";
 import NewFooter from "../Components/NewFooter";
 import ProjectsCard from "../Components/ProjectsCard";
 import Spinner from "../Components/Spinner";
-import { db } from "../firebase_";
-import homeicon from "../Assets/Home.png";
-// import { browserHistory } from "react-router";
+import { db, auth } from "../firebase_";
+import homeicon from "../Assets/Home.svg";
+import { Redirect } from "react-router-dom";
+
 
 class ProjectsPage extends Component {
   constructor(props) {
@@ -16,11 +17,19 @@ class ProjectsPage extends Component {
     };
   }
 
-  // onNavigateHome(){
-  //   browserHistory.push("/");
-  // }
+  handleClick = () => {
+    this.setState({ redirect: true });
+  };
 
   componentDidMount() {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ loggedIn: true });
+      } else {
+        this.setState({ loggedIn: false });
+      }
+    });
+
     db.collection("projects")
       .get()
       .then((snapshot) => {
@@ -34,6 +43,11 @@ class ProjectsPage extends Component {
       .catch((error) => console.log(error));
   }
   render() {
+    if (this.state.redirect) {
+      if (this.state.loggedIn) {
+        return <Redirect to="/adminpage" />;
+      } else return <Redirect to="/" />;
+    }
     return (
       <section>
         <div>
@@ -48,19 +62,14 @@ class ProjectsPage extends Component {
           <ProjectsPageText />
           <div className="col-md-12 background-class">
             <div className="sticky">
-              <img
-                src={homeicon} 
-                // onClick={this.onNavigateHome}
-              />
+              <img onClick={() => this.handleClick()} src={homeicon} />
             </div>
             {this.state.loaded ? (
               <ProjectsCard projects={this.state.projects} />
             ) : (
               <Spinner />
             )}
-
             <br />
-            {/* <ProjectsCard projects={this.state.projects} /> */}
             <button
               type="button"
               style={{

@@ -63,7 +63,9 @@ class ForgotPassword extends Component {
                 required
               />
               </div>
-              <br />
+              <p className="forgot-password text-right">
+              <a href="/login">Return to Login</a>
+              </p>
               {this.state.errorMsg ? <p className="center-align red-text">{this.state.errorMsg}</p> : null}
               <div className="text-center mt-4">
                 <button

@@ -1,10 +1,8 @@
 import React from "react";
-import { MDBAnimation } from "mdbreact";
 
 const ContactUsIllustration = () => {
   return (
     <div className='col-md-6 col-xs-12 col-sm-12'>
-    <MDBAnimation reveal type='bounceInLeft' duration='1s'>
       <img
         alt='Thesis'
         style={{
@@ -15,7 +13,6 @@ const ContactUsIllustration = () => {
         }}
         src={require("../Assets/ContactusIllustration.png")}
       />
-      </MDBAnimation>
     </div>
   );
 };

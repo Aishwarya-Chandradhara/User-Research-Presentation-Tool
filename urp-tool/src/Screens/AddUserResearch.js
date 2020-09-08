@@ -13,7 +13,8 @@ import PopUp4 from "../Components/PopUp4";
 import AddUserResearchText from "../Components/AddUserResearchText";
 import NewFooter from "../Components/NewFooter";
 import { Redirect } from "react-router-dom";
-import {db, auth, storage} from "../firebase_"
+import {db, auth, storage} from "../firebase_";
+import homeicon from "../Assets/Home.svg";
 
 class AddProjects extends Component {
   constructor(props) {
@@ -23,6 +24,10 @@ class AddProjects extends Component {
       skills : []
     };
   }
+
+  handleClick = () => {
+    this.setState({ redirect: true });
+  };
   closePopup = () => {
     this.setState({ showPopup: false });
     window.location.reload()
@@ -40,7 +45,7 @@ class AddProjects extends Component {
     await auth.onAuthStateChanged((user) => {
          console.log("test", user)
          if (user) {
-           //  console.log(user)
+           this.setState({isLoggedIn: true})
            db.collection("projects")
           .get()
           .then((snapshot) => {
@@ -120,8 +125,10 @@ class AddProjects extends Component {
 
 
   render() {
-    if(this.state.redirect){
-      return <Redirect to="/login" />
+    if (this.state.redirect) {
+      if (this.state.loggedIn) {
+        return <Redirect to="/adminpage" />;
+      } else return <Redirect to="/" />;
     }
     return (
       <section className="background-4">
@@ -136,6 +143,9 @@ class AddProjects extends Component {
         <div className= "col-md-12 adduserresearch-main">
           <AddUserResearchText />
           <div>
+          <div className="sticky">
+              <img onClick={() => this.handleClick()} src={homeicon} />
+            </div>
             <MDBContainer>
               <MDBRow className="center-align">
                 <MDBCol

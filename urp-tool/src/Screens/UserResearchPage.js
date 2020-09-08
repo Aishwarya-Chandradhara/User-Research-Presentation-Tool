@@ -3,14 +3,28 @@ import UserResearchPageText from "../Components/UserResearchPageText";
 import NewFooter from "../Components/NewFooter";
 import { MDBTypography, MDBNavLink, MDBIcon } from "mdbreact";
 import UserProfile from "../Sections/UserProfile";
-import {db } from "../firebase_"
+import { db, auth } from "../firebase_";
+import homeicon from "../Assets/Home.svg";
+import { Redirect } from "react-router-dom";
 
 class UserResearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {};
   }
+
+  handleClick = () => {
+    this.setState({ redirect: true });
+  };
+
   componentDidMount (){
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ loggedIn: true });
+      } else {
+        this.setState({ loggedIn: false });
+      }
+    });
     db.collection("userprofile")
       .get()
       .then((snapshot) => {
@@ -25,6 +39,11 @@ class UserResearchPage extends Component {
   }
   render() {
     console.log("reseachstate", this.state.researches)
+    if (this.state.redirect) {
+      if (this.state.loggedIn) {
+        return <Redirect to="/adminpage" />;
+      } else return <Redirect to="/" />;
+    }
     return (
       <section>
         <MDBTypography
@@ -38,6 +57,10 @@ class UserResearchPage extends Component {
         <div className= "background1-class">
        
           <UserResearchPageText  />
+          <div className="col-md-12 background-class">
+            <div className="sticky">
+              <img onClick={() => this.handleClick()} src={homeicon} />
+            </div>
           {this.state.loaded ? <UserProfile project={this.props.match.params.name} researches={this.state.researches}/> : null}
           <button
             type="button"
@@ -61,11 +84,15 @@ class UserResearchPage extends Component {
               Back to Projects
             </MDBNavLink>
           </button>
+          
           <NewFooter />
         </div>
+        </div>
       </section>
+      
     );
   }
-}
+  }
+
 
 export default UserResearchPage;

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {
   MDBTypography,
-  MDBContainer,
   MDBRow,
   MDBCol,
   MDBNavLink,
@@ -12,6 +11,7 @@ import NewFooter from "../Components/NewFooter";
 import FileUpload from "../Components/FileUpload";
 import { Redirect } from "react-router-dom";
 import { db, storage, auth } from "../firebase_";
+import homeicon from "../Assets/Home.svg";
 
 class AddProjects extends Component {
   constructor(props) {
@@ -20,13 +20,16 @@ class AddProjects extends Component {
   }
   componentDidMount () {
     this.isLoggedIn()
-   }
+  }
+
+  handleClick = () => {
+    this.setState({ redirect: true });
+  };
  
    isLoggedIn = async () => {
     await auth.onAuthStateChanged((user) => {
-         console.log("test", user)
          if (user) {
-           //  console.log(user)
+          this.setState({login:true})
          } else {
            this.setState({redirect : true})
          }
@@ -74,7 +77,7 @@ class AddProjects extends Component {
   
   render() {
     if(this.state.redirect){
-      return <Redirect to="/login" />
+      return <Redirect to="/adminpage" />
     }
     return (
       <section className="background-4">
@@ -88,6 +91,9 @@ class AddProjects extends Component {
         </MDBTypography>
         <div className="col-md-12 project-main">
           <AddProjectsText />
+          <div className="sticky">
+              <img onClick={() => this.handleClick()} src={homeicon} />
+            </div>
           <div className="col-md-12" style={{display: "flex", justifyContent:"center", alignItems: "center"}}>
             <MDBCol className="col-md-6">
               <MDBRow className="center-align">
