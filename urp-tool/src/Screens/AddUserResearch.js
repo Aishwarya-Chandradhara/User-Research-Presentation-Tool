@@ -21,7 +21,7 @@ class AddProjects extends Component {
     super(props);
     this.state = {
       showPopup: false,
-      skills : []
+      skills : [],
     };
   }
 
@@ -515,6 +515,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Enthusiastic"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -529,6 +530,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Go Getter"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -543,6 +545,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Affable"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -557,6 +560,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Sociable"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -573,6 +577,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Maverick"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -587,6 +592,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Elevated"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -601,6 +607,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Friendly"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -615,6 +622,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Thoughtful"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -631,6 +639,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="TeamPlayer"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -645,6 +654,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Attentive"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -659,6 +669,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Organized"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -673,6 +684,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Passionate"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -689,6 +701,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Dependable"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -703,6 +716,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Motivated"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -717,6 +731,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Creative"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
@@ -731,6 +746,7 @@ class AddProjects extends Component {
                               class="custom-control-input"
                               id="Proactive"
                               onChange={this.handleCheckBox}
+                              disabled={this.state.skills.length >3 ? true : false}
                             />
                             <label
                               class="custom-control-label custom-skill"
