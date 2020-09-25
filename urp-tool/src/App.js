@@ -9,7 +9,6 @@ import ForgotPassword from "./Screens/ForgotPassword";
 import AdminPage from "./Screens/AdminPage";
 import AddProjects from "./Screens/AddProjects";
 import AddUserResearch from "./Screens/AddUserResearch"
-import { db,auth } from "./firebase_"
 
 class App extends React.Component {
   state = {
