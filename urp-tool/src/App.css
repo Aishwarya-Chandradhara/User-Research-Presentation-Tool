@@ -174,10 +174,11 @@
 } */
 
 .sticky{
-  position: -webkit-sticky;
-position: sticky;
+ 
+position: fixed;
+right: 0;
 top: 0;
-margin-left: 200vh;
+margin-top: 40vh;
 }
 
 .add-project-card {

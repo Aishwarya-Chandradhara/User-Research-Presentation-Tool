@@ -5,11 +5,10 @@ const AddProjectsText = () => {
     <div className='col-md-12 text-center'>
       <div style={{ marginTop: "2vh" }}>
         <p style={{ color: "#222222" }}>
-        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore
-        et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.  Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. 
-        Lorem ipsum dolor sit amet, consetetur 
-        sadipscing elitr, se est Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo d 
+        Project description helps us understand the application designed for each company.
+        It provides us with useful content that will allow us to choose from the availabe 
+        projects to view the user research conducted on each project to better analyse 
+        the pros of the reserach findings and its associated project outcome. 
         </p>
       </div>
     </div>

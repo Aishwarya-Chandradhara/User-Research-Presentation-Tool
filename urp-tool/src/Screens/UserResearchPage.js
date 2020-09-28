@@ -57,7 +57,7 @@ class UserResearchPage extends Component {
         <div className= "background1-class">
        
           <UserResearchPageText  />
-          <div className="col-md-12 background-class">
+          <div className="background-class">
             <div className="sticky">
               <img onClick={() => this.handleClick()} src={homeicon} />
             </div>

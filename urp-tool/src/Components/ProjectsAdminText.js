@@ -53,7 +53,7 @@ const ProjectsAdminText = () => {
           style={{
             color: "#FFFFFF",
             backgroundColor: "#0066FF",
-            marginLeft: "30vw",
+            marginLeft: "2vw",
             padding: "8px",
             borderRadius: "25px",
             border: "none",

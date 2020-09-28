@@ -9,7 +9,8 @@ const ProjectsPageText = () => {
           applications for our clients. Our client base varies from a set of
           manufacturing industries, coffeehouses, IT companies, etc. Our designs
           are entirely based on the likeliness of the users, making it extremely
-          user centric.
+          user centric. focuses on meaningful communication of media through cyclical 
+          and collaborative processes between people and technology.
           <br />
           Here is a sneak peak of companies we have been associated with to
           design projects.
